@@ -1,0 +1,178 @@
+@font-face {
+  font-family: Cabin;
+  src: url("../assets/Fonts/Cabin/static/Cabin/Cabin-Regular.ttf");
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #2d2828;
+  font-family: Cabin;
+  color: #FDFDFD;
+}
+
+a {
+  color: #FDFDFD;
+  text-transform: none;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.rotate90deg {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+footer p {
+  color: #494141;
+}
+
+#indexBody header {
+  line-height: 1px;
+}
+#indexBody header h1 {
+  font-size: 75px;
+  width: 75px;
+  transform: rotate(90deg);
+}
+#indexBody header h2 {
+  font-size: 25px;
+}
+#indexBody header img {
+  height: 20vh;
+  margin-left: 50%;
+  margin-top: 0%;
+}
+#indexBody main {
+  margin-top: 17.5vh;
+  margin-left: 10vw;
+  line-height: 0px;
+}
+#indexBody main button {
+  background-color: #444444;
+  color: #FDFDFD;
+  border: 0px;
+  font-size: 25px;
+  padding: 7.5px 15px 5px 15px;
+  border-radius: 3.5px;
+}
+#indexBody main p {
+  color: #FDFDFD;
+}
+
+#selectGroupBody main {
+  width: 75%;
+  margin: auto;
+  margin-top: 20vh;
+}
+#selectGroupBody main h2 {
+  text-decoration: underline;
+}
+#selectGroupBody main form {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+  margin-left: 5%;
+  outline: none;
+}
+#selectGroupBody main form select {
+  background-color: #444444;
+  color: #FDFDFD;
+  font-size: 17.5px;
+  padding: 7.5px 0px 7.5px 0px;
+  border: 0px;
+  border-radius: 5px;
+}
+#selectGroupBody main form input[type=submit] {
+  background-color: #373737;
+  color: #FDFDFD;
+  max-width: 50%;
+  border: 0px;
+  font-size: 17.5px;
+  margin-top: 7.5px;
+  padding: 5px 0px 5px 0px;
+  border-radius: 7.5px;
+}
+
+#homeBody header {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+#homeBody header .navHeader {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+}
+#homeBody header .navHeader img {
+  height: 35px;
+  margin-left: 5px;
+}
+#homeBody header h2 {
+  margin: auto;
+  font-size: 25px;
+}
+#homeBody main .homeMain {
+  margin-top: 10vh;
+}
+#homeBody main .homeMain .top h2 {
+  font-weight: normal;
+  margin-left: 5px;
+  margin-bottom: 2.5px;
+}
+#homeBody main .homeMain .top .counterDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#homeBody main .homeMain .top .counterDiv div {
+  width: 45%;
+  border-radius: 15px;
+  line-height: 0px;
+}
+#homeBody main .homeMain .top .counterDiv div h3 {
+  font-size: 25px;
+  margin-left: 5px;
+  margin-top: 9.5%;
+}
+#homeBody main .homeMain .top .counterDiv div p {
+  font-size: 60px;
+  text-align: center;
+  line-height: 0px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+#homeBody main .homeMain .top .counterDiv .examCounter {
+  background-color: #FFDB87;
+}
+#homeBody main .homeMain .top .counterDiv .devoirCounter {
+  background-color: #A8F6FF;
+}
+#homeBody main .homeMain .devoir h2 {
+  font-weight: normal;
+  margin-left: 5px;
+  margin-bottom: 2.5px;
+}
+#homeBody main .homeMain .devoir h2 img {
+  height: 25px;
+  width: 25px;
+  transform: rotate(90deg);
+}
+#homeBody main .homeMain .edt h2 {
+  font-weight: normal;
+  margin-left: 5px;
+  margin-bottom: 2.5px;
+}
+#homeBody main .homeMain .edt h2 img {
+  height: 25px;
+  width: 25px;
+  transform: rotate(90deg);
+}
+
+/*# sourceMappingURL=app.css.map */

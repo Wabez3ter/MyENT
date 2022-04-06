@@ -1,0 +1,45 @@
+$backgroundColor: #2d2828;
+$txtColorWhite: #FDFDFD;
+$buttonBackColor: #444444;
+
+@font-face {
+    font-family: Cabin;
+    src: url("../assets/Fonts/Cabin/static/Cabin/Cabin-Regular.ttf");
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: $backgroundColor;
+    font-family: Cabin;
+    color: $txtColorWhite;
+}
+
+a{
+    color: $txtColorWhite;
+    text-transform: none;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.rotate90deg {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+
+    p {
+        color: #494141;
+    }
+}
+
+@import 'index';
+@import 'selectGroup';
+
+@import 'home';

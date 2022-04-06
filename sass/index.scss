@@ -1,0 +1,37 @@
+#indexBody{
+  header{
+    line-height: 1px;
+    h1{
+      font-size: 75px;
+      width: 75px;
+      transform: rotate(90deg);
+    }
+    h2 {
+      font-size: 25px;
+    }
+    img{
+      height: 20vh;
+      margin-left: 50%;
+      margin-top: 0%;
+    }
+  }
+
+  main {
+    margin-top: 17.5vh;
+    margin-left: 10vw;
+    line-height: 0px;
+
+    button{
+      background-color: #444444;
+      color: $txtColorWhite;
+      border: 0px;
+      font-size: 25px;
+      padding: 7.5px 15px 5px 15px;
+      border-radius: 3.5px;
+    }
+
+    p {
+      color: $txtColorWhite;
+    }
+  }
+}
