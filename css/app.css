@@ -164,6 +164,25 @@ footer p {
 #homeBody main .homeMain {
   margin-top: 10vh;
 }
+#homeBody main .homeMain .top .selectDiv {
+  float: right;
+  margin-top: -50px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+#homeBody main .homeMain .top .selectDiv input {
+  background-color: #444444;
+  color: #FDFDFD;
+  font-size: 17.5px;
+  padding: 7.5px 0px 7.5px 0px;
+  border: 0px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+#homeBody main .homeMain .top .selectDiv img {
+  height: 35px;
+}
 #homeBody main .homeMain .top h2 {
   font-weight: normal;
   margin-left: 5px;
@@ -220,6 +239,7 @@ footer p {
   border-radius: 25px;
   margin-top: 10px;
   line-height: 0px;
+  box-shadow: 5px 5px 15px black;
 }
 #homeBody main .homeMain .devoir .devoirBD .devoirDiv h3 {
   margin-left: 5px;

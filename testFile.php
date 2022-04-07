@@ -12,6 +12,6 @@
         include('BDSystem.php');
 
         refreshEDT();
-        ?>>
+        ?>
     </body>
 </html>

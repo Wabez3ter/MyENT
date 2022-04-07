@@ -11,7 +11,7 @@ if(isset($_GET['view'])){
         if(isset($_COOKIE['username'])){
             header("Location: connexion.php?view=logout");
         }else {
-            setcookie('user_group', '', time()-3600, '/', '', false, false);
+            setcookie('user_group', '', time()-3600, '/');
             header("Location: index.php");
         }
     }

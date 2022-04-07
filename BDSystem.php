@@ -132,6 +132,10 @@ function refreshEDT(){
                 $salleEDT = "TP INFO";
             }else if($salleEDT == "021_Lili BOULANGER ( salle de cours INFO),020bis_Giuseppe VERDI ( TP INFO)" || $salleEDT == "020bis_Giuseppe VERDI ( TP INFO), 021_Lili BOULANGER ( salle de cours INFO)"){
                 $salleEDT = "COURS/TP INFO";
+            }else if($salleEDT == "Cours en ligne (CEL) IUTMS"){
+                $salleEDT = "COURS EN LIGNE";
+            }else if($salleEDT == "022_ Nadia BOULANGER ( salle de cours GEA)"){
+                $salleEDT = "COURS GEA";
             }
 
             $durationEDT = $event->getDuration();
@@ -232,6 +236,146 @@ function afficheEDTDayAndStopMoreNow(){
     $nowHeure = date('H:m:s');
     //print($nowDate);
     $sql = "SELECT * FROM edt WHERE groupeEDT='$usergroup' AND dateEDT='$nowDate' AND heureStop >= '$nowHeure' ORDER BY heureStart ASC";
+    $result = $con->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $duration = $row['durationEDT'];
+            $duration = $duration/3600;
+            $height = $duration*75;
+            ?>
+            <div class="edtDiv" style="background-color: <?php echo(getColorByMatiere($row['nomEDT'])); ?>; min-height: <?php echo($height); ?>px;">
+                <div class="topEDTDiv">
+                    <h3><?php echo($row['profEDT']); ?></h3>
+                    <p><img src="assets/Utils/location.png" alt="Icone Salle"/><?php echo($row['salleEDT']); ?></p>
+                </div>
+                <?php
+                $mtop = 0;
+                if($duration == 1){
+                    $mtop = 0;
+                }else if($duration == 1.5){
+                    $mtop = 0;
+                }else if($duration == 2){
+                    $mtop = 58;
+                }else if($duration == 2.5){
+                    $mtop = 85;
+                }else if($duration == 3){
+                    $mtop = 125;
+                }else if($duration == 3.5){
+                    $mtop = 165;
+                }else if($duration == 4){
+                    $mtop = 200;
+                }
+                ?>
+                <div class="content" style="margin-top: <?php echo($mtop); ?>px">
+                    <?php
+                    $nom = $row['nomEDT'];
+                    if($nom == "Communication Milieu Professionnel"){
+                        $nom = "Communication";
+                    }
+                    ?>
+                    <h2><?php echo($nom); ?></h2>
+                    <?php
+                    $heureDebut = $row['heureStart'];
+                    //00:00:00
+                    $heureDebut = substr($heureDebut, 0, 5);
+                    $heureFin = $row['heureStop'];
+                    $heureFin = substr($heureFin, 0, 5);
+                    ?>
+                    <p class="hours"><?php echo($heureDebut); ?> - <?php echo($heureFin); ?></p>
+                </div>
+            </div>
+            <?php
+        }
+        mysqli_free_result($result);
+    } else {
+        printf('Aucun cour trouvé.<br />');
+    }
+    $con->close();
+}
+
+function afficheEDTHomeNow(){
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    $con = mysqli_connect("localhost", "root", "", "myent");
+
+    if($con->connect_error){
+        echo("Erreur, impossible de se connecter à la base de donnée");
+    }
+
+    $usergroup = $_COOKIE['user_group'];
+    $nowDate = date('Y-m-d');
+    //print($nowDate);
+    $sql = "SELECT * FROM edt WHERE groupeEDT='$usergroup' AND dateEDT='$nowDate' ORDER BY heureStart ASC";
+    $result = $con->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $duration = $row['durationEDT'];
+            $duration = $duration/3600;
+            $height = $duration*75;
+            ?>
+            <div class="edtDiv" style="background-color: <?php echo(getColorByMatiere($row['nomEDT'])); ?>; min-height: <?php echo($height); ?>px;">
+                <div class="topEDTDiv">
+                    <h3><?php echo($row['profEDT']); ?></h3>
+                    <p><img src="assets/Utils/location.png" alt="Icone Salle"/><?php echo($row['salleEDT']); ?></p>
+                </div>
+                <?php
+                $mtop = 0;
+                if($duration == 1){
+                    $mtop = 0;
+                }else if($duration == 1.5){
+                    $mtop = 0;
+                }else if($duration == 2){
+                    $mtop = 58;
+                }else if($duration == 2.5){
+                    $mtop = 85;
+                }else if($duration == 3){
+                    $mtop = 125;
+                }else if($duration == 3.5){
+                    $mtop = 165;
+                }else if($duration == 4){
+                    $mtop = 200;
+                }
+                ?>
+                <div class="content" style="margin-top: <?php echo($mtop); ?>px">
+                    <?php
+                    $nom = $row['nomEDT'];
+                    if($nom == "Communication Milieu Professionnel"){
+                        $nom = "Communication";
+                    }
+                    ?>
+                    <h2><?php echo($nom); ?></h2>
+                    <?php
+                    $heureDebut = $row['heureStart'];
+                    //00:00:00
+                    $heureDebut = substr($heureDebut, 0, 5);
+                    $heureFin = $row['heureStop'];
+                    $heureFin = substr($heureFin, 0, 5);
+                    ?>
+                    <p class="hours"><?php echo($heureDebut); ?> - <?php echo($heureFin); ?></p>
+                </div>
+            </div>
+            <?php
+        }
+        mysqli_free_result($result);
+    } else {
+        printf('Aucun cour trouvé.<br />');
+    }
+    $con->close();
+}
+
+function afficheEDTHomeNotNow($date){
+    $con = mysqli_connect("localhost", "root", "", "myent");
+
+    if($con->connect_error){
+        echo("Erreur, impossible de se connecter à la base de donnée");
+    }
+
+    $usergroup = $_COOKIE['user_group'];
+    $dateNew = strtotime($date);
+    $nowDate = date('Y-m-d', $dateNew);
+    //print($nowDate);
+    $sql = "SELECT * FROM edt WHERE groupeEDT='$usergroup' AND dateEDT='$nowDate' ORDER BY heureStart ASC";
     $result = $con->query($sql);
 
     if ($result->num_rows > 0) {

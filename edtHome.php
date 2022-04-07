@@ -1,11 +1,15 @@
 <?php
+date_default_timezone_set("Europe/Paris");
+include 'BDSystem.php';
 
 if(!isset($_COOKIE['user_group'])){
     header("Location: index.php");
 }
 
-date_default_timezone_set("Europe/Paris");
-include 'BDSystem.php'
+if(isset($_GET['view']) && $_GET['view'] == "refresh"){
+    refreshEDT();
+    header("Location: edtHome.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,39 +35,45 @@ include 'BDSystem.php'
 <main>
     <section class="homeMain">
         <section class="top">
-            <h2>Bonjour, <?php echo($_COOKIE['user_group']); ?></h2>
-        </section>
-        <section class="edt">
-            <form action="edtHome.php" method="post">
-                <input type="date" name="date" id="date"/>
-                <input type="submit" value="Envoyer">
-            </form>
-            <div class="selection">
-                <select onchange="redirectSelectSettings(this)">
-                    <option value="">Sélectionner un paramètre</option>
-                    <option value="addProjet">Projet - Ajouter</option>
-                </select>
-
+            <div class="selectDiv">
+                <?php
+                if(isset($_COOKIE['username'])){
+                    ?><img onclick="<?php refreshEDT(); ?>" src="assets/Utils/refresh.png" alt="Icone refresh"/><?php
+                }
+                ?>
+                <input onclick="redirectSelectSettings(this)" class="dateSelect" type="date" name="date" id="date"/>
                 <script>
                     function redirectSelectSettings(event){
                         var view = event.value;
                         if(view == ""){
-                            window.location.href = "settings.php";
+                            window.location.href = "edtHome.php";
 
                         }else {
-                            window.location.href = "settings.php?view=" + view;
+                            window.location.href = "edtHome.php?view=" + view;
                         }
                     }
                 </script>
             </div>
-            <h2>Aujourd'hui, <?php echo(date('d/m/Y')); ?> <a href="#"><img src="assets/Utils/loupe.png" alt="Icone loupe"/></a></h2>
+            <h2>Bonjour, <?php echo($_COOKIE['user_group']); ?></h2>
+        </section>
+        <section class="edt">
+            <?php
+            if(isset($_GET['view'])){
+                $dateString = $_GET['view'];
+                $newDate = substr($dateString, -5, 2)."/".substr($dateString, -2, 2)."/".substr($dateString, 0, 4);
+                $dateNew = strtotime($newDate);
+                $dateOk = date('d/m/Y', $dateNew);
+                ?><h2><?php echo($dateOk); ?></h2><?php
+            }else {
+                ?><h2>Aujourd'hui, <?php echo(date('d/m/Y')); ?></h2><?php
+            }
+            ?>
             <section class="edtBD">
                 <?php
-
                 if(isset($_GET['view'])){
-
+                    afficheEDTHomeNotNow($dateString);
                 }else {
-                    afficheEDTDayAndStopMoreNow();
+                    afficheEDTHomeNow();
                 }
                 ?>
             </section>

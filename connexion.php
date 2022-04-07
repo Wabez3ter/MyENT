@@ -4,8 +4,8 @@ include('BDSystem.php');
 if(isset($_GET['selectGroupeInput']) && isset($_GET['username'])){
 
     if(connectUserOk($_GET['selectGroupeInput'], $_GET['username']) == true){
-        setcookie('username', $_GET['username'], time()+3600*24, '/', '', true, true);
-        setcookie('user_group', $_GET['selectGroupeInput'], time()+3600*24, '/', '', true, true);
+        setcookie('username', $_GET['username'], time()+3600*24, '/');
+        setcookie('user_group', $_GET['selectGroupeInput'], time()+3600*24, '/');
         header("Location: home.php");
     }else {
         header('Location: connexion.php?status=error');
@@ -14,8 +14,8 @@ if(isset($_GET['selectGroupeInput']) && isset($_GET['username'])){
 
 if(isset($_GET['view'])){
     if($_GET['view'] == "logout"){
-        setcookie('username', '', time()-3600, '/', '', false, false);
-        setcookie('user_group', '', time()-3600, '/', '', false, false);
+        setcookie('username', '', time()-3600, '/');
+        setcookie('user_group', '', time()-3600, '/');
         header("Location: index.php");
     }
 }
