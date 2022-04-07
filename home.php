@@ -44,7 +44,7 @@ include 'BDSystem.php'
                     </div>
                 </section>
                 <section class="devoir">
-                    <h2>A faire pour aujourd'hui <a href="#"><img src="assets/Utils/loupe.png" alt="Icone loupe"/></a></h2>
+                    <h2>A faire pour aujourd'hui <a href="devoirHome.php"><img src="assets/Utils/loupe.png" alt="Icone loupe"/></a></h2>
                     <secetion class="devoirBD">
                         <?php
                             homeDevoirDiv();
@@ -52,7 +52,7 @@ include 'BDSystem.php'
                     </secetion>
                 </section>
                 <section class="edt">
-                    <h2>Aujourd'hui, <?php echo(date('d/m/Y')); ?> <a href="#"><img src="assets/Utils/loupe.png" alt="Icone loupe"/></a></h2>
+                    <h2>Aujourd'hui, <?php echo(date('d/m/Y')); ?> <a href="edtHome.php"><img src="assets/Utils/loupe.png" alt="Icone loupe"/></a></h2>
                     <section class="edtBD">
                         <?php
                         afficheEDTDayAndStopMoreNow();

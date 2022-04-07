@@ -1,5 +1,6 @@
 <?php
 date_default_timezone_set("Europe/Paris");
+include('php/manager.php');
 
 function connectUserOk($username, $groupe){
     //LOCAL
@@ -156,14 +157,16 @@ function homeDevoirDiv(){
         echo("Erreur, impossible de se connecter à la base de donnée");
     }
 
+    $nowDate = date('Y-m-d');
     $usergroup = $_COOKIE['user_group'];
-    $sql = "SELECT * FROM devoir WHERE groupeDevoir='$usergroup'";
+    $sql = "SELECT * FROM devoir WHERE groupeDevoir='$usergroup' AND dateDevoir='$nowDate'";
     $result = $con->query($sql);
 
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
+            $colorMatiere = getColorByMatiere($row['matiereDevoir']);
             ?>
-            <div class="devoirDiv">
+            <div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
                 <h3><?php echo($row['nomDevoir']); ?></h3>
                 <div class="otherDevoirDiv ">
                     <?php $dateDevoir = date('d/m/Y', strtotime($row['dateDevoir'])); ?>
@@ -177,7 +180,41 @@ function homeDevoirDiv(){
         }
         mysqli_free_result($result);
     } else {
-        printf('No record found.<br />');
+        printf('Aucun devoir trouvé.<br />');
+    }
+    $con->close();
+}
+
+function devoirHomeDiv(){
+    $con = mysqli_connect("localhost", "root", "", "myent");
+
+    if($con->connect_error){
+        echo("Erreur, impossible de se connecter à la base de donnée");
+    }
+
+    $usergroup = $_COOKIE['user_group'];
+    $sql = "SELECT * FROM devoir WHERE groupeDevoir='$usergroup' ORDER BY dateDevoir ASC";
+    $result = $con->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $colorMatiere = getColorByMatiere($row['matiereDevoir']);
+            ?>
+            <div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
+                <h3><?php echo($row['nomDevoir']); ?></h3>
+                <div class="otherDevoirDiv ">
+                    <?php $dateDevoir = date('d/m/Y', strtotime($row['dateDevoir'])); ?>
+                    <p><img src="assets/Utils/clock.png" alt="Icone horloge"/> <?php echo($dateDevoir); ?></p>
+                </div>
+                <div class="otherDevoirDiv">
+                    <p><img id="margeDown" src="assets/Utils/category.png" alt="Icone category"> <?php echo($row['categorieDevoir']); ?></p>
+                </div>
+            </div>
+            <?php
+        }
+        mysqli_free_result($result);
+    } else {
+        printf('Aucun devoir trouvé.<br />');
     }
     $con->close();
 }
@@ -197,7 +234,6 @@ function afficheEDTDayAndStopMoreNow(){
     $sql = "SELECT * FROM edt WHERE groupeEDT='$usergroup' AND dateEDT='$nowDate' AND heureStop >= '$nowHeure' ORDER BY heureStart ASC";
     $result = $con->query($sql);
 
-    include('php/manager.php');
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $duration = $row['durationEDT'];
@@ -249,7 +285,7 @@ function afficheEDTDayAndStopMoreNow(){
         }
         mysqli_free_result($result);
     } else {
-        printf('No record found.<br />');
+        printf('Aucun cour trouvé.<br />');
     }
     $con->close();
 }
