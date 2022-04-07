@@ -1,5 +1,6 @@
 $backgroundColor: #2d2828;
 $txtColorWhite: #FDFDFD;
+$txtColorBlack: #343434;
 $buttonBackColor: #444444;
 
 @font-face {
@@ -41,5 +42,6 @@ footer{
 
 @import 'index';
 @import 'selectGroup';
+@import 'connexion';
 
 @import 'home';

@@ -100,6 +100,49 @@ footer p {
   border-radius: 7.5px;
 }
 
+#connexionBody main {
+  width: 75%;
+  margin: auto;
+  margin-top: 20vh;
+}
+#connexionBody main h2 {
+  text-decoration: underline;
+}
+#connexionBody main form {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+  margin-left: 5%;
+  outline: none;
+}
+#connexionBody main form input[type=text] {
+  background-color: #444444;
+  color: #FDFDFD;
+  font-size: 17.5px;
+  padding: 7.5px 0px 7.5px 0px;
+  border: 0px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+#connexionBody main form select {
+  background-color: #444444;
+  color: #FDFDFD;
+  font-size: 17.5px;
+  padding: 7.5px 0px 7.5px 0px;
+  border: 0px;
+  border-radius: 5px;
+}
+#connexionBody main form input[type=submit] {
+  background-color: #373737;
+  color: #FDFDFD;
+  max-width: 50%;
+  border: 0px;
+  font-size: 17.5px;
+  margin-top: 7.5px;
+  padding: 5px 0px 5px 0px;
+  border-radius: 7.5px;
+}
+
 #homeBody header {
   display: flex;
   flex-direction: row;
@@ -164,6 +207,40 @@ footer p {
   width: 25px;
   transform: rotate(90deg);
 }
+#homeBody main .homeMain .devoir .devoirBD {
+  display: flex;
+  flex-direction: column;
+}
+#homeBody main .homeMain .devoir .devoirBD .devoirDiv {
+  color: #343434;
+  background-color: #FDFDFD;
+  width: 82.5%;
+  margin-left: 3.5%;
+  min-height: 100px;
+  border-radius: 25px;
+  border-left: 5px solid red;
+  margin-top: 10px;
+  line-height: 0px;
+}
+#homeBody main .homeMain .devoir .devoirBD .devoirDiv h3 {
+  margin-left: 5px;
+  margin-top: 9px;
+  font-size: 22.5px;
+  font-weight: normal;
+  height: 100%;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+#homeBody main .homeMain .devoir .devoirBD .devoirDiv #margeDown {
+  margin-top: -10px;
+}
+#homeBody main .homeMain .devoir .devoirBD .devoirDiv .otherDevoirDiv {
+  margin-left: 15px;
+}
+#homeBody main .homeMain .devoir .devoirBD .devoirDiv .otherDevoirDiv p img {
+  height: 20px;
+  margin-top: 10px;
+}
 #homeBody main .homeMain .edt h2 {
   font-weight: normal;
   margin-left: 5px;
@@ -173,6 +250,46 @@ footer p {
   height: 25px;
   width: 25px;
   transform: rotate(90deg);
+}
+#homeBody main .homeMain .edt .edtBD .edtDiv {
+  width: 95%;
+  margin: auto;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  color: #343434;
+}
+#homeBody main .homeMain .edt .edtBD .edtDiv .topEDTDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0px;
+  min-height: 25px;
+  line-height: 0px;
+}
+#homeBody main .homeMain .edt .edtBD .edtDiv .topEDTDiv h3 {
+  font-weight: normal;
+  margin-left: 4%;
+}
+#homeBody main .homeMain .edt .edtBD .edtDiv .topEDTDiv p {
+  vertical-align: center;
+  margin-top: 5px;
+  margin-right: 5px;
+  font-size: 16.5px;
+}
+#homeBody main .homeMain .edt .edtBD .edtDiv .topEDTDiv p img {
+  height: 20px;
+}
+#homeBody main .homeMain .edt .edtBD .edtDiv .content {
+  margin-top: 0px;
+  bottom: 0px;
+}
+#homeBody main .homeMain .edt .edtBD .edtDiv .content h2 {
+  margin-bottom: 0px;
+  width: 100%;
+}
+#homeBody main .homeMain .edt .edtBD .edtDiv .content .hours {
+  margin-left: 10px;
+  margin-top: 0px;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,14 +1,19 @@
 <?php
 
 if(isset($_GET['selectGroupeInput'])){
-    setcookie('user_group', $_GET['selectGroupeInput'], time()+3600*24, '/', '', true, true);
+    setcookie('user_group', $_GET['selectGroupeInput'], time()+3600*24, '/');
     header("Location: home.php");
+
 }
 
 if(isset($_GET['view'])){
     if($_GET['view'] == "logout"){
-        setcookie('user_group', '', time()-3600, '/', '', false, false);
-        header("Location: index.php");
+        if(isset($_COOKIE['username'])){
+            header("Location: connexion.php?view=logout");
+        }else {
+            setcookie('user_group', '', time()-3600, '/', '', false, false);
+            header("Location: index.php");
+        }
     }
 }
 

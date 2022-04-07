@@ -4,6 +4,7 @@ if(!isset($_COOKIE['user_group'])){
     header("Location: index.php");
 }
 
+date_default_timezone_set("Europe/Paris");
 include 'BDSystem.php'
 ?>
 
@@ -17,7 +18,7 @@ include 'BDSystem.php'
     <link rel="stylesheet" href="css/app.css"/>
     <link rel="shortcut icon" href="assets/Logo/Court.png" type="image/png"/>
 
-    <title>MyENT - Selection des Groupes</title>
+    <title>MyENT - Homes</title>
 </head>
     <body id="homeBody">
         <header>
@@ -44,14 +45,21 @@ include 'BDSystem.php'
                 </section>
                 <section class="devoir">
                     <h2>A faire pour aujourd'hui <a href="#"><img src="assets/Utils/loupe.png" alt="Icone loupe"/></a></h2>
+                    <secetion class="devoirBD">
+                        <?php
+                            homeDevoirDiv();
+                        ?>
+                    </secetion>
                 </section>
                 <section class="edt">
                     <h2>Aujourd'hui, <?php echo(date('d/m/Y')); ?> <a href="#"><img src="assets/Utils/loupe.png" alt="Icone loupe"/></a></h2>
+                    <section class="edtBD">
+                        <?php
+                        afficheEDTDayAndStopMoreNow();
+                        ?>
+                    </section>
                 </section>
             </section>
         </main>
-        <footer>
-            <p>Made by Wabezeter - SkytorStudio©2022</p>
-        </footer>
     </body>
 </html>

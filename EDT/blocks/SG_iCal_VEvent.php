@@ -18,6 +18,8 @@ class SG_iCal_VEvent {
 
 	protected $uid;
 
+    public $normalStartStampTxtDataDate;
+    public $normalStopStampTxtDataDate;
 	protected $start;
 	protected $end;
 
@@ -60,11 +62,13 @@ class SG_iCal_VEvent {
 
 		if( isset($data['dtstart']) ) {
 			$this->start = $this->getTimestamp($data['dtstart'], $ical);
+            $this->normalStartStampTxtDataDate = $data['dtstart'];
 			unset($data['dtstart']);
 		}
 
 		if( isset($data['dtend']) ) {
 			$this->end = $this->getTimestamp($data['dtend'], $ical);
+            $this->normalStopStampTxtDataDate = $data['dtend'];
 			unset($data['dtend']);
 		} elseif( isset($data['duration']) ) {
 			$dur = new SG_iCal_Duration( $data['duration']->getData() );
@@ -289,4 +293,24 @@ class SG_iCal_VEvent {
 
 		return $ts;
 	}
+
+    /**
+     * @return SG_iCal_Line
+     */
+    public function getNormalStartStampTxtDataDate(): SG_iCal_Line
+    {
+        return $this->normalStartStampTxtDataDate;
+    }
+
+    /**
+     * @return SG_iCal_Line
+     */
+    public function getNormalStopStampTxtDataDate(): SG_iCal_Line
+    {
+        return $this->normalStopStampTxtDataDate;
+    }
+
+
+
+
 }
