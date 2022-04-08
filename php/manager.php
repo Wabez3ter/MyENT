@@ -21,6 +21,8 @@ function getColorByMatiere($mat){
         return "#ffccff";
     }else if($mat == "Réseau & Prog bas niveau"){
         return "#99ff99";
+    }else if($mat == "Services Réseau"){
+        return "#99ff99";
     }else {
         return "#FFFFFF";
     }
