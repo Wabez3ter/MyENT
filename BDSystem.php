@@ -145,7 +145,7 @@ function refreshEDT(){
         $sql = "INSERT INTO `edt`(`idEDT`, `nomEDT`, `groupeEDT`, `dateEDT`, `heureStart`, `heureStop`, `descriptionEDT`, `salleEDT`, `profEDT`, `durationEDT`) VALUES(NULL, '$nomEDT', '$group', '$dateEDT', '$heureStart', '$heureStop', '$descriptionEDT', '$salleEDT', '$profEDT', '$durationEDT')";
         if(mysqli_query($con, $sql)){
             echo("Succes");
-            header("Location: home.php");
+            header("Location: edtHome.php");
         }else {
             echo("Error");
         }

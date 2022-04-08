@@ -1,0 +1,55 @@
+.devoir{
+  h2{
+    font-weight: normal;
+    margin-left: 5px;
+    margin-bottom: 2.5px;
+
+    img{
+      height: 25px;
+      width: 25px;
+      transform: rotate(90deg);
+    }
+  }
+
+  .devoirBD{
+    display: flex;
+    flex-direction: column;
+
+    .devoirDiv{
+      color: $txtColorBlack;
+      background-color: $txtColorWhite;
+      width: 82.5%;
+      margin-left: 3.5%;
+      min-height: 100px;
+      border-radius: 25px;
+      margin-top: 10px;
+      line-height: 0px;
+      box-shadow: 5px 5px 15px black;
+
+      h3 {
+        margin-left: 5px;
+        margin-top: 9px;
+        font-size: 22.5px;
+        font-weight: normal;
+        height: 100%;
+        line-height: 20px;
+        margin-bottom: 10px;
+      }
+
+      #margeDown{
+        margin-top: -10px;
+      }
+      .otherDevoirDiv{
+        margin-left: 15px;
+        p{
+          img{
+            height: 20px;
+            margin-top: 10px;
+          }
+
+        }
+      }
+
+    }
+  }
+}
