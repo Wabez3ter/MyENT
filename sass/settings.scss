@@ -1,0 +1,101 @@
+#settingsBody{
+  h3{
+    display: flex;
+    justify-content: left;
+    flex-direction: row-reverse;
+    font-size: 35px;
+    margin-left: 15px;
+    img{
+      height: 50px;
+    }
+  }
+
+  .settings--container{
+    background-color: $backgroundColor;
+    width: 75%;
+    height: 45vh;
+    margin: auto;
+    border-radius: 15px;
+    margin-top: 15vh;
+    box-shadow: 5px 5px 15px black;
+
+    form{
+      padding-top: 1px;
+      margin-left: 5px;
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+
+      input[type=text]{
+        width: 70%;
+        margin-left: 25px;
+        height: 25px;
+        background-color: $buttonBackColor;
+        border: 0px;
+        border-radius: 2.5px;
+        box-shadow: 2px 2px 3px black;
+        margin-top: 10px;
+
+      }
+      input[type=number]{
+        width: 70%;
+        margin-left: 25px;
+        height: 25px;
+        background-color: $buttonBackColor;
+        border: 0px;
+        border-radius: 2.5px;
+        box-shadow: 2px 2px 3px black;
+        margin-top: 10px;
+
+      }
+      input[type=date] {
+        width: 70%;
+        margin-left: 25px;
+        height: 25px;
+        background-color: $buttonBackColor;
+        border: 0px;
+        border-radius: 2.5px;
+        box-shadow: 2px 2px 3px black;
+        margin-top: 10px;
+      }
+
+      input[type=submit]{
+        width: 90%;
+        margin-left: 5%;
+        height: 35px;
+        background-color: #dadada;
+        border: 0px;
+        border-radius: 2.5px;
+        box-shadow: 2px 2px 3px black;
+        margin-top: 15vh;
+        font-size: 20px;
+      }
+
+      select {
+        width: 70%;
+        margin-left: 25px;
+        height: 25px;
+        background-color: $buttonBackColor;
+        border: 0px;
+        border-radius: 2.5px;
+        box-shadow: 2px 2px 3px black;
+        margin-top: 10px;
+      }
+
+      span{
+        display: flex;
+        flex-direction: row;
+
+        input[type=submit] {
+          width: 75%;
+        }
+
+        img {
+          height: 35px;
+          margin-top: 7vh;
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+}

@@ -211,6 +211,10 @@ footer p {
   margin-left: 5px;
   margin-bottom: 2.5px;
 }
+#homeBody main .homeMain .top h2 img {
+  height: 17.5px;
+  margin-right: 5px;
+}
 #homeBody main .homeMain .top .counterDiv {
   display: flex;
   flex-direction: row;
@@ -333,6 +337,95 @@ footer p {
 #homeBody main .homeMain .edt .edtBD .edtDiv .content .hours {
   margin-left: 10px;
   margin-top: 0px;
+}
+#settingsBody h3 {
+  display: flex;
+  justify-content: left;
+  flex-direction: row-reverse;
+  font-size: 35px;
+  margin-left: 15px;
+}
+#settingsBody h3 img {
+  height: 50px;
+}
+#settingsBody .settings--container {
+  background-color: #eff1f6;
+  width: 75%;
+  height: 45vh;
+  margin: auto;
+  border-radius: 15px;
+  margin-top: 15vh;
+  box-shadow: 5px 5px 15px black;
+}
+#settingsBody .settings--container form {
+  padding-top: 1px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+}
+#settingsBody .settings--container form input[type=text] {
+  width: 70%;
+  margin-left: 25px;
+  height: 25px;
+  background-color: #ffffff;
+  border: 0px;
+  border-radius: 2.5px;
+  box-shadow: 2px 2px 3px black;
+  margin-top: 10px;
+}
+#settingsBody .settings--container form input[type=number] {
+  width: 70%;
+  margin-left: 25px;
+  height: 25px;
+  background-color: #ffffff;
+  border: 0px;
+  border-radius: 2.5px;
+  box-shadow: 2px 2px 3px black;
+  margin-top: 10px;
+}
+#settingsBody .settings--container form input[type=date] {
+  width: 70%;
+  margin-left: 25px;
+  height: 25px;
+  background-color: #ffffff;
+  border: 0px;
+  border-radius: 2.5px;
+  box-shadow: 2px 2px 3px black;
+  margin-top: 10px;
+}
+#settingsBody .settings--container form input[type=submit] {
+  width: 90%;
+  margin-left: 5%;
+  height: 35px;
+  background-color: #dadada;
+  border: 0px;
+  border-radius: 2.5px;
+  box-shadow: 2px 2px 3px black;
+  margin-top: 15vh;
+  font-size: 20px;
+}
+#settingsBody .settings--container form select {
+  width: 70%;
+  margin-left: 25px;
+  height: 25px;
+  background-color: #ffffff;
+  border: 0px;
+  border-radius: 2.5px;
+  box-shadow: 2px 2px 3px black;
+  margin-top: 10px;
+}
+#settingsBody .settings--container form span {
+  display: flex;
+  flex-direction: row;
+}
+#settingsBody .settings--container form span input[type=submit] {
+  width: 75%;
+}
+#settingsBody .settings--container form span img {
+  height: 35px;
+  margin-top: 7vh;
+  margin-left: 15px;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -60,6 +60,7 @@ function refreshEDT(){
     mysqli_query($con, $sqlRemoveTuple);
 
     //URLS
+    $url_file = "";
     if(isset($_COOKIE['user_group'])){
         if($_COOKIE['user_group'] == "infoS1"){
             $url_file='https://proseconsult.umontpellier.fr/jsp/custom/modules/plannings/direct_cal.jsp?data=58c99062bab31d256bee14356aca3f2423c0f022cb9660eba051b2653be722c4a5f10b982f9b914f8b3df9a16d82f493dc5c094f7d1a811b903031bde802c7f56c5ce5d7b8d9b880fb6990772f87c6e42988e4003796ffd7b370c710463ddfae12fa5989f2758552375cc5c53d9043bee7ff8e44acf541b2e2b7394758cd4205,1';
@@ -142,8 +143,8 @@ function refreshEDT(){
                 $salleEDT = "COURS GEA";
             }
 
-            $durationEDT = $event->getDuration();
         }
+        $durationEDT = $event->getDuration();
 
         //INSERT INTO `edt` (`idEDT`, `nomEDT`, `groupeEDT`, `dateEDT`, `heureStart`, `heureStop`, `descriptionEDT`, `salleEDT`, `profEDT`) VALUES (NULL, 'test', 'test', '2022-04-13', '23:46', '23:50', 'fzf', 'fdz', 'vds');
         $sql = "INSERT INTO `edt`(`idEDT`, `nomEDT`, `groupeEDT`, `dateEDT`, `heureStart`, `heureStop`, `descriptionEDT`, `salleEDT`, `profEDT`, `durationEDT`) VALUES(NULL, '$nomEDT', '$group', '$dateEDT', '$heureStart', '$heureStop', '$descriptionEDT', '$salleEDT', '$profEDT', '$durationEDT')";
@@ -209,16 +210,16 @@ function devoirHomeDiv(){
         while($row = $result->fetch_assoc()) {
             $colorMatiere = getColorByMatiere($row['matiereDevoir']);
             ?>
-            <div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
-                <h3><?php echo($row['nomDevoir']); ?></h3>
-                <div class="otherDevoirDiv ">
-                    <?php $dateDevoir = date('d/m/Y', strtotime($row['dateDevoir'])); ?>
-                    <p><img src="assets/Utils/clock.png" alt="Icone horloge"/> <?php echo($dateDevoir); ?></p>
-                </div>
-                <div class="otherDevoirDiv">
-                    <p><img id="margeDown" src="assets/Utils/category.png" alt="Icone category"> <?php echo($row['categorieDevoir']); ?></p>
-                </div>
-            </div>
+            <a href="settings.php?view=devoirEditSupp&id=<?php echo($row['idDevoir']); ?>&name=<?php echo($row['nomDevoir']) ?>&categorie=<?php echo($row['categorieDevoir']) ?>&matiere=<?php echo($row['matiereDevoir']) ?>&date=<?php echo($row['dateDevoir']) ?>"><div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
+                    <h3><?php echo($row['nomDevoir']); ?></h3>
+                    <div class="otherDevoirDiv ">
+                        <?php $dateDevoir = date('d/m/Y', strtotime($row['dateDevoir'])); ?>
+                        <p><img src="assets/Utils/clock.png" alt="Icone horloge"/> <?php echo($dateDevoir); ?></p>
+                    </div>
+                    <div class="otherDevoirDiv">
+                        <p><img id="margeDown" src="assets/Utils/category.png" alt="Icone category"> <?php echo($row['categorieDevoir']); ?></p>
+                    </div>
+                </div></a>
             <?php
         }
         mysqli_free_result($result);
@@ -437,4 +438,42 @@ function afficheEDTHomeNotNow($date){
         printf('Aucun cour trouvé.<br />');
     }
     $con->close();
+}
+
+function addDevoirBD($name, $categorie, $matiere, $date){
+    //LOCAL
+    $con = mysqli_connect("localhost","root","","myent");
+    //SERVER
+
+    $groupe = $_COOKIE['user_group'];
+    //$sql = "INSERT INTO `devoir` (`idDevoir`, `groupeDevoir`, `categorieDevoir`, `nomDevoir`, `matiereDevoir`, `dateDevoir`) VALUES (NULL, 'test', 'test', 'test', 'test', '2022-04-28');"
+    $sql = "INSERT INTO `devoir` (`idDevoir`, `groupeDevoir`, `categorieDevoir`, `nomDevoir`, `matiereDevoir`, `dateDevoir`) VALUES(NULL, '$groupe', '$categorie', '$name', '$matiere', '$date')";
+
+    mysqli_query($con, $sql);
+    mysqli_close($con);
+}
+
+function editDevoirBD($id, $name, $categorie, $matiere, $date){
+    //LOCAL
+    $con = mysqli_connect("localhost","root","","myent");
+    //SERVER
+
+    $groupe = $_COOKIE['user_group'];
+    //$sql = "INSERT INTO `devoir` (`idDevoir`, `groupeDevoir`, `categorieDevoir`, `nomDevoir`, `matiereDevoir`, `dateDevoir`) VALUES (NULL, 'test', 'test', 'test', 'test', '2022-04-28');"
+    $sql = "UPDATE `devoir` SET `categorieDevoir`='$categorie',`nomDevoir`='$name',`matiereDevoir`='$matiere',`dateDevoir`='$date' WHERE `devoir`.`idDevoir`='$id'";
+
+    mysqli_query($con, $sql);
+    mysqli_close($con);
+}
+
+function deleteDevoirBD($id){
+    //LOCAL
+    $con = mysqli_connect("localhost","root","","myent");
+    //SERVER
+
+    $groupe = $_COOKIE['user_group'];
+    $sql = "DELETE FROM `devoir` WHERE `devoir`.`idDevoir`='$id'";
+
+    mysqli_query($con, $sql);
+    mysqli_close($con);
 }

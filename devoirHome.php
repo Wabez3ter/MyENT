@@ -4,6 +4,12 @@ if(!isset($_COOKIE['user_group'])){
     header("Location: index.php");
 }
 
+if(isset($_GET['view'])){
+    if($_GET['view'] == "add"){
+        header("Location: settings.php?view=devoirAdd");
+    }
+}
+
 date_default_timezone_set("Europe/Paris");
 include 'BDSystem.php'
 ?>
@@ -31,7 +37,11 @@ include 'BDSystem.php'
 <main>
     <section class="homeMain">
         <section class="top">
-            <h2><?php echo(getNameToWelcome()); ?></h2>
+            <h2><?php
+                if(isset($_COOKIE['username'])){
+                    ?><a href="devoirHome.php?view=add"><img src="assets/Utils/add.png" alt="Icone ajout devoir" /></a><?php
+                }
+                ?><?php echo(getNameToWelcome()); ?></h2>
             <div class="counterDiv">
                 <div class="examCounter">
                     <h3>Examen</h3>
