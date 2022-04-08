@@ -197,9 +197,10 @@ function devoirHomeDiv(){
     }
 
     $usergroup = $_COOKIE['user_group'];
-    $sql = "SELECT * FROM devoir WHERE groupeDevoir='$usergroup' ORDER BY dateDevoir ASC";
-    $result = $con->query($sql);
+    $nowDate = date('Y-m-d');
 
+    $sql = "SELECT * FROM devoir WHERE groupeDevoir='$usergroup' AND dateDevoir>='$nowDate' ORDER BY dateDevoir ASC";
+    $result = $con->query($sql);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $colorMatiere = getColorByMatiere($row['matiereDevoir']);
