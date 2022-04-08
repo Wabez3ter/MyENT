@@ -45,6 +45,7 @@ if(isset($_GET['view'])){
                     <option value="infoS6">Informatique - S6</option>
                 </select>
                 <input type="submit" value="Enregistrer"/>
+                <p>En cliquant sur "Enregistrer", vous acceptez l'utilisation de cookie.</p>
             </form>
         </main>
         <footer>

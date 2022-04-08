@@ -2,6 +2,7 @@ $backgroundColor: #2d2828;
 $txtColorWhite: #FDFDFD;
 $txtColorBlack: #343434;
 $buttonBackColor: #444444;
+$footerColorTxt: #494141;
 
 @font-face {
     font-family: Cabin;
@@ -36,7 +37,7 @@ footer{
     bottom: 0;
 
     p {
-        color: #494141;
+        color: $footerColorTxt;
     }
 }
 

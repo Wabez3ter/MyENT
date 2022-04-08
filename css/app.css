@@ -99,6 +99,12 @@ footer p {
   padding: 5px 0px 5px 0px;
   border-radius: 7.5px;
 }
+#selectGroupBody main form p {
+  margin-top: 0px;
+  color: #544b4b;
+  width: 100%;
+  text-align: right;
+}
 
 #connexionBody main {
   width: 75%;

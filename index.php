@@ -29,6 +29,7 @@
             <a href="connexion.php"><p>Connexion ?</p></a>
         </main>
         <footer>
+            <p>Ce site est encore en développement.</p>
             <p>Made by Wabezeter - SkytorStudio©2022</p>
         </footer>
     </body>
