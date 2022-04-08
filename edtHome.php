@@ -38,7 +38,7 @@ if(isset($_GET['view']) && $_GET['view'] == "refresh"){
 </header>
 <main>
     <section class="homeMain">
-        <section class="top">
+        <section class="topEDT">
             <div class="selectDiv">
                 <form action="edtHome.php" method="GET">
                     <input class="dateSelect" type="date" name="date" id="date"/>
@@ -47,7 +47,7 @@ if(isset($_GET['view']) && $_GET['view'] == "refresh"){
             </div>
             <h2><?php echo(getNameToWelcome()); ?></h2>
         </section>
-        <section class="edt">
+        <section class="edtHOME">
             <?php
             if(isset($_GET['date'])){
                 $dateString = $_GET['date'];

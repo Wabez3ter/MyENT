@@ -4,6 +4,14 @@ if(!isset($_COOKIE['user_group'])){
     header("Location: index.php");
 }
 
+if(!isset($_GET['l'])){
+    ?>
+    <script type="text/javascript">
+        document.location="home.php?l=" + screen.width;
+    </script>
+    <?php
+}
+
 date_default_timezone_set("Europe/Paris");
 include 'BDSystem.php'
 ?>
@@ -51,7 +59,13 @@ include 'BDSystem.php'
                         ?>
                     </secetion>
                 </section>
-                <section class="edt">
+                <?php
+                if($_GET['l'] >= 1000){
+                    $mtop = 200;
+                    $mtop = 200+(counterNbDevoirHOME()*110);
+                }
+                ?>
+                <section class="edt" style="margin-top: -<?php echo($mtop); ?>px">
                     <h2>Aujourd'hui, <?php echo(date('d/m/Y')); ?> <a href="edtHome.php"><img src="assets/Utils/loupe.png" alt="Icone loupe"/></a></h2>
                     <section class="edtBD">
                         <?php

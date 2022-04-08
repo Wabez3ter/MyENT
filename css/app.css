@@ -243,6 +243,77 @@ footer p {
 #homeBody main .homeMain .top .counterDiv .devoirCounter {
   background-color: #A8F6FF;
 }
+#homeBody main .homeMain .topEDT .selectDiv {
+  float: right;
+  margin-top: -50px;
+  margin-right: 15px;
+  vertical-align: center;
+}
+#homeBody main .homeMain .topEDT .selectDiv form {
+  display: flex;
+  flex-direction: row;
+}
+#homeBody main .homeMain .topEDT .selectDiv form input[type=date] {
+  background-color: #ffffff;
+  color: #343434;
+  font-size: 17.5px;
+  padding: 7.5px 0px 7.5px 0px;
+  border: 0px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  height: 20px;
+  box-shadow: 2px 2px 2px #d5d5d5;
+}
+#homeBody main .homeMain .topEDT .selectDiv form input[type=image] {
+  color: #343434;
+  font-size: 17.5px;
+  padding: 7.5px 0px 7.5px 4px;
+  border: 0px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  height: 25px;
+}
+#homeBody main .homeMain .topEDT .selectDiv img {
+  height: 35px;
+}
+#homeBody main .homeMain .topEDT h2 {
+  font-weight: normal;
+  margin-left: 5px;
+  margin-bottom: 2.5px;
+}
+#homeBody main .homeMain .topEDT h2 img {
+  height: 17.5px;
+  margin-right: 5px;
+}
+#homeBody main .homeMain .topEDT .counterDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#homeBody main .homeMain .topEDT .counterDiv div {
+  width: 45%;
+  border-radius: 15px;
+  line-height: 0px;
+}
+#homeBody main .homeMain .topEDT .counterDiv div h3 {
+  font-size: 25px;
+  margin-left: 10px;
+  margin-top: 9.5%;
+}
+#homeBody main .homeMain .topEDT .counterDiv div p {
+  font-size: 60px;
+  text-align: center;
+  line-height: 0px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+#homeBody main .homeMain .topEDT .counterDiv .examCounter {
+  background-color: #FFDB87;
+}
+#homeBody main .homeMain .topEDT .counterDiv .devoirCounter {
+  background-color: #A8F6FF;
+}
 #homeBody main .homeMain .devoir h2 {
   font-weight: normal;
   margin-left: 5px;
@@ -284,6 +355,50 @@ footer p {
   margin-left: 15px;
 }
 #homeBody main .homeMain .devoir .devoirBD .devoirDiv .otherDevoirDiv p img {
+  height: 20px;
+  margin-top: 10px;
+}
+#homeBody main .homeMain .devoirHOME h2 {
+  font-weight: normal;
+  margin-left: 5px;
+  margin-bottom: 2.5px;
+}
+#homeBody main .homeMain .devoirHOME h2 img {
+  height: 25px;
+  width: 25px;
+  transform: rotate(90deg);
+}
+#homeBody main .homeMain .devoirHOME .devoirBD {
+  display: flex;
+  flex-direction: column;
+}
+#homeBody main .homeMain .devoirHOME .devoirBD .devoirDiv {
+  color: #343434;
+  background-color: #FDFDFD;
+  width: 82.5%;
+  margin-left: 3.5%;
+  min-height: 100px;
+  border-radius: 25px;
+  margin-top: 10px;
+  line-height: 0px;
+  box-shadow: 5px 5px 15px black;
+}
+#homeBody main .homeMain .devoirHOME .devoirBD .devoirDiv h3 {
+  margin-left: 5px;
+  margin-top: 9px;
+  font-size: 22.5px;
+  font-weight: normal;
+  height: 100%;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+#homeBody main .homeMain .devoirHOME .devoirBD .devoirDiv #margeDown {
+  margin-top: -10px;
+}
+#homeBody main .homeMain .devoirHOME .devoirBD .devoirDiv .otherDevoirDiv {
+  margin-left: 15px;
+}
+#homeBody main .homeMain .devoirHOME .devoirBD .devoirDiv .otherDevoirDiv p img {
   height: 20px;
   margin-top: 10px;
 }
@@ -335,6 +450,57 @@ footer p {
   width: 100%;
 }
 #homeBody main .homeMain .edt .edtBD .edtDiv .content .hours {
+  margin-left: 10px;
+  margin-top: 0px;
+}
+#homeBody main .homeMain .edtHOME h2 {
+  font-weight: normal;
+  margin-left: 5px;
+  margin-bottom: 2.5px;
+}
+#homeBody main .homeMain .edtHOME h2 img {
+  height: 25px;
+  width: 25px;
+  transform: rotate(90deg);
+}
+#homeBody main .homeMain .edtHOME .edtBD .edtDiv {
+  width: 95%;
+  margin: auto;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  color: #343434;
+  box-shadow: 2px 2px 5px black;
+}
+#homeBody main .homeMain .edtHOME .edtBD .edtDiv .topEDTDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0px;
+  min-height: 25px;
+  line-height: 0px;
+}
+#homeBody main .homeMain .edtHOME .edtBD .edtDiv .topEDTDiv h3 {
+  font-weight: normal;
+  margin-left: 4%;
+}
+#homeBody main .homeMain .edtHOME .edtBD .edtDiv .topEDTDiv p {
+  vertical-align: center;
+  margin-top: 5px;
+  margin-right: 5px;
+  font-size: 16.5px;
+}
+#homeBody main .homeMain .edtHOME .edtBD .edtDiv .topEDTDiv p img {
+  height: 20px;
+}
+#homeBody main .homeMain .edtHOME .edtBD .edtDiv .content {
+  margin-top: 0px;
+  bottom: 0px;
+}
+#homeBody main .homeMain .edtHOME .edtBD .edtDiv .content h2 {
+  margin-bottom: 0px;
+  width: 100%;
+}
+#homeBody main .homeMain .edtHOME .edtBD .edtDiv .content .hours {
   margin-left: 10px;
   margin-top: 0px;
 }
@@ -426,6 +592,79 @@ footer p {
   height: 35px;
   margin-top: 7vh;
   margin-left: 15px;
+}
+
+@media (min-width: 1000px) {
+  #indexBody header img {
+    margin-left: 5%;
+  }
+
+  #selectGroupBody main {
+    width: 25%;
+  }
+  #selectGroupBody main form p {
+    width: 50%;
+    text-align: left;
+  }
+
+  #connexionBody {
+    width: 25%;
+    margin: auto;
+  }
+  #connexionBody form p {
+    width: 50%;
+    text-align: left;
+  }
+
+  #homeBody main .homeMain .top {
+    width: 25%;
+  }
+  #homeBody main .homeMain .topEDT {
+    width: 100%;
+  }
+  #homeBody main .homeMain .devoir {
+    width: 25%;
+    margin-left: 2.5%;
+  }
+  #homeBody main .homeMain .devoir .devoirBD .devoirDiv h3 {
+    margin-left: 17.5px;
+    padding-top: 2px;
+  }
+  #homeBody main .homeMain .devoirHOME {
+    width: 30%;
+    margin-left: 35%;
+    margin-top: -5%;
+  }
+  #homeBody main .homeMain .devoirHOME .devoirBD .devoirDiv h3 {
+    margin-left: 17.5px;
+    padding-top: 2px;
+  }
+  #homeBody main .homeMain .edt {
+    position: absolute;
+    margin-left: 60%;
+  }
+  #homeBody main .homeMain .edt .edtBD .edtDiv {
+    width: 80%;
+  }
+  #homeBody main .homeMain .edtHOME {
+    width: 25%;
+    margin-left: 7%;
+  }
+  #settingsBody .settings--container {
+    width: 20%;
+  }
+  #settingsBody .settings--container form input[type=text] {
+    width: 85%;
+  }
+  #settingsBody .settings--container form input[type=number] {
+    width: 85%;
+  }
+  #settingsBody .settings--container form input[type=date] {
+    width: 85%;
+  }
+  #settingsBody .settings--container form select {
+    width: 85%;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

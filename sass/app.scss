@@ -47,3 +47,7 @@ footer{
 
 @import 'home';
 @import 'settings';
+
+@media (min-width: 1000px) {
+    @import 'desktop';
+}

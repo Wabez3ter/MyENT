@@ -52,6 +52,24 @@ function counterExam(){
     return $rowcount;
 }
 
+function counterNbDevoirHOME(){
+    //LOCAL
+    $con = mysqli_connect("localhost","root","","myent");
+    //SERVER
+
+    $usergroup = $_COOKIE['user_group'];
+    $nowDate = date('Y-m-d');
+
+    $sql = "SELECT * FROM devoir WHERE groupeDevoir='$usergroup' AND dateDevoir='$nowDate'";
+
+    if ($result = mysqli_query($con, $sql)) {
+        $rowcount = mysqli_num_rows( $result );
+    }
+
+    mysqli_close($con);
+    return $rowcount;
+}
+
 function refreshEDT(){
     $con = mysqli_connect("localhost", "root", "", "myent");
 
@@ -209,8 +227,23 @@ function devoirHomeDiv(){
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $colorMatiere = getColorByMatiere($row['matiereDevoir']);
-            ?>
-            <a href="settings.php?view=devoirEditSupp&id=<?php echo($row['idDevoir']); ?>&name=<?php echo($row['nomDevoir']) ?>&categorie=<?php echo($row['categorieDevoir']) ?>&matiere=<?php echo($row['matiereDevoir']) ?>&date=<?php echo($row['dateDevoir']) ?>"><div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
+
+            if(isset($_COOKIE['username'])){
+                ?>
+                <a href="settings.php?view=devoirEditSupp&id=<?php echo($row['idDevoir']); ?>&name=<?php echo($row['nomDevoir']) ?>&categorie=<?php echo($row['categorieDevoir']) ?>&matiere=<?php echo($row['matiereDevoir']) ?>&date=<?php echo($row['dateDevoir']) ?>"><div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
+                        <h3><?php echo($row['nomDevoir']); ?></h3>
+                        <div class="otherDevoirDiv ">
+                            <?php $dateDevoir = date('d/m/Y', strtotime($row['dateDevoir'])); ?>
+                            <p><img src="assets/Utils/clock.png" alt="Icone horloge"/> <?php echo($dateDevoir); ?></p>
+                        </div>
+                        <div class="otherDevoirDiv">
+                            <p><img id="margeDown" src="assets/Utils/category.png" alt="Icone category"> <?php echo($row['categorieDevoir']); ?></p>
+                        </div>
+                    </div></a>
+                <?php
+            }else {
+                ?>
+                <div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
                     <h3><?php echo($row['nomDevoir']); ?></h3>
                     <div class="otherDevoirDiv ">
                         <?php $dateDevoir = date('d/m/Y', strtotime($row['dateDevoir'])); ?>
@@ -219,8 +252,9 @@ function devoirHomeDiv(){
                     <div class="otherDevoirDiv">
                         <p><img id="margeDown" src="assets/Utils/category.png" alt="Icone category"> <?php echo($row['categorieDevoir']); ?></p>
                     </div>
-                </div></a>
-            <?php
+                </div>
+                <?php
+            }
         }
         mysqli_free_result($result);
     } else {

@@ -4,6 +4,10 @@ if(isset($_COOKIE['groupe'])){
     header("Location: header.php");
 }
 
+if(!isset($_COOKIE['username'])){
+    header("Location: devoirHome.php");
+}
+
 include('BDSystem.php');
 
 ?>

@@ -53,7 +53,7 @@ include 'BDSystem.php'
                 </div>
             </div>
         </section>
-        <section class="devoir">
+        <section class="devoirHOME">
             <h2>A faire</h2>
             <secetion class="devoirBD">
                 <?php
