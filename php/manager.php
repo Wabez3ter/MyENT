@@ -25,3 +25,27 @@ function getColorByMatiere($mat){
         return "#FFFFFF";
     }
 }
+
+function getTxtByGroup($groupName){
+    if($groupName == "infoS1"){
+        return "S1";
+    }else if($groupName == "infoS2"){
+        return "S2";
+    }else if($groupName == "infoS3"){
+        return "S3";
+    }else if($groupName == "infoS4"){
+        return "S4";
+    }else if($groupName == "infoS5"){
+        return "S5";
+    }else if($groupName == "infoS6"){
+        return "S6";
+    }
+}
+
+function getNameToWelcome(){
+    if(isset($_COOKIE['username'])){
+       return "Bonjour, ".$_COOKIE['username'];
+    }else {
+        return "Bonjour, ".getTxtByGroup($_COOKIE['user_group']);
+    }
+}

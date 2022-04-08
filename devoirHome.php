@@ -26,12 +26,12 @@ include 'BDSystem.php'
         <a href="selectGroup.php?view=logout"><img src="./assets/Utils/power-off.png" alt="Logout icone"/></a>
         <a href="home.php"><img src="./assets/Utils/house.png" alt="Home icone"/></a>
     </div>
-    <h2><?php echo($_COOKIE['user_group']); ?></h2>
+    <h2><?php echo(getTxtByGroup($_COOKIE['user_group'])); ?></h2>
 </header>
 <main>
     <section class="homeMain">
         <section class="top">
-            <h2>Bonjour, <?php echo($_COOKIE['user_group']); ?></h2>
+            <h2><?php echo(getNameToWelcome()); ?></h2>
             <div class="counterDiv">
                 <div class="examCounter">
                     <h3>Examen</h3>

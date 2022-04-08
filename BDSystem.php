@@ -22,7 +22,9 @@ function counterDevoir(){
     //SERVER
 
     $groupeUser = $_COOKIE['user_group'];
-    $sql = "SELECT * from devoir WHERE categorieDevoir='devoir' AND groupeDevoir='$groupeUser'";
+    $nowDate = date('Y-m-d');
+
+    $sql = "SELECT * from devoir WHERE categorieDevoir='devoir' AND groupeDevoir='$groupeUser' AND dateDevoir>='$nowDate'";
 
     if ($result = mysqli_query($con, $sql)) {
         $rowcount = mysqli_num_rows( $result );
@@ -38,7 +40,9 @@ function counterExam(){
     //SERVER
 
     $groupeUser = $_COOKIE['user_group'];
-    $sql = "SELECT * from devoir WHERE categorieDevoir='Examen' AND groupeDevoir='$groupeUser'";
+    $nowDate = date('Y-m-d');
+
+    $sql = "SELECT * from devoir WHERE categorieDevoir='Examen' AND groupeDevoir='$groupeUser' AND dateDevoir>='$nowDate'";
 
     if ($result = mysqli_query($con, $sql)) {
         $rowcount = mysqli_num_rows( $result );

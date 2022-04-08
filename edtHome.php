@@ -34,7 +34,7 @@ if(isset($_GET['view']) && $_GET['view'] == "refresh"){
         }
         ?>
     </div>
-    <h2><?php echo($_COOKIE['user_group']); ?></h2>
+    <h2><?php echo(getTxtByGroup($_COOKIE['user_group'])); ?></h2>
 </header>
 <main>
     <section class="homeMain">
@@ -45,7 +45,7 @@ if(isset($_GET['view']) && $_GET['view'] == "refresh"){
                     <input type="image" src="assets/Utils/check-mark.png" value="submit"/>
                 </form>
             </div>
-            <h2>Bonjour, <?php echo($_COOKIE['user_group']); ?></h2>
+            <h2><?php echo(getNameToWelcome()); ?></h2>
         </section>
         <section class="edt">
             <?php

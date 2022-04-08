@@ -1,8 +1,8 @@
-$backgroundColor: #2c2727;
-$txtColorWhite: #FDFDFD;
+$backgroundColor: #eff1f6;
 $txtColorBlack: #343434;
-$buttonBackColor: #444444;
-$footerColorTxt: #494141;
+$txtColorWhite: #FDFDFD;
+$buttonBackColor: #ffffff;
+$footerColorTxt: #c9c9c9;
 
 @font-face {
     font-family: Cabin;
@@ -14,11 +14,11 @@ body {
     margin: 0;
     background-color: $backgroundColor;
     font-family: Cabin;
-    color: $txtColorWhite;
+    color: $txtColorBlack;
 }
 
 a{
-    color: $txtColorWhite;
+    color: $txtColorBlack;
     text-transform: none;
     font-style: normal;
     text-decoration: none;

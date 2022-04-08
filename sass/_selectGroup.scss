@@ -18,7 +18,7 @@
 
       select{
         background-color: $buttonBackColor;
-        color: $txtColorWhite;
+        color: $txtColorBlack;
         font-size: 17.5px;
         padding: 7.5px 0px 7.5px 0px;
         border: 0px;
@@ -26,8 +26,8 @@
       }
 
       input[type=submit]{
-        background-color: #373737;
-        color: $txtColorWhite;
+        background-color: $buttonBackColor;
+        color: $txtColorBlack;
         max-width: 50%;
         border: 0px;
         font-size: 17.5px;
