@@ -648,7 +648,11 @@ footer p {
   }
   #homeBody main .homeMain .edtHOME {
     width: 25%;
-    margin-left: 7%;
+    margin-left: 15%;
+    margin-top: -2%;
+  }
+  #homeBody main .homeMain .edtHOME .edtBD .edtDiv {
+    width: 400px;
   }
   #settingsBody .settings--container {
     width: 20%;

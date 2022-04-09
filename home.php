@@ -63,6 +63,8 @@ include 'BDSystem.php'
                 if($_GET['l'] >= 1000){
                     $mtop = 200;
                     $mtop = 200+(counterNbDevoirHOME()*110);
+                }else {
+                    $mtop = 0;
                 }
                 ?>
                 <section class="edt" style="margin-top: -<?php echo($mtop); ?>px">
