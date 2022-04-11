@@ -40,10 +40,12 @@ if(isset($_GET['view']) && $_GET['view'] == "refresh"){
     <section class="homeMain">
         <section class="topEDT">
             <div class="selectDiv">
-                <form action="edtHome.php" method="GET">
-                    <input class="dateSelect" type="date" name="date" id="date"/>
-                    <input type="image" src="assets/Utils/check-mark.png" value="submit"/>
-                </form>
+                <input class="dateSelect" type="date" name="date" value="2022-04-11" id="date" onchange="changeDate(this)"/>
+                <script>
+                    function changeDate(event){
+                        document.location="edtHome.php?date=" + event.value;
+                    }
+                </script>
             </div>
             <h2><?php echo(getNameToWelcome()); ?></h2>
         </section>

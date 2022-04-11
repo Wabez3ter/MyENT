@@ -249,11 +249,7 @@ footer p {
   margin-right: 15px;
   vertical-align: center;
 }
-#homeBody main .homeMain .topEDT .selectDiv form {
-  display: flex;
-  flex-direction: row;
-}
-#homeBody main .homeMain .topEDT .selectDiv form input[type=date] {
+#homeBody main .homeMain .topEDT .selectDiv input[type=date] {
   background-color: #ffffff;
   color: #343434;
   font-size: 17.5px;
@@ -263,6 +259,10 @@ footer p {
   margin-bottom: 5px;
   height: 20px;
   box-shadow: 2px 2px 2px #d5d5d5;
+}
+#homeBody main .homeMain .topEDT .selectDiv form {
+  display: flex;
+  flex-direction: row;
 }
 #homeBody main .homeMain .topEDT .selectDiv form input[type=image] {
   color: #343434;
