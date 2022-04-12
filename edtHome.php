@@ -40,7 +40,14 @@ if(isset($_GET['view']) && $_GET['view'] == "refresh"){
     <section class="homeMain">
         <section class="topEDT">
             <div class="selectDiv">
-                <input class="dateSelect" type="date" name="date" value="2022-04-11" id="date" onchange="changeDate(this)"/>
+                <?php
+                if(isset($_GET['date'])){
+                    ?><input class="dateSelect" type="date" name="date" value="<?php echo($_GET['date']); ?>" id="date" onchange="changeDate(this)"/><?php
+                }else {
+                    $nowDateInput = date('Y-m-d');
+                    ?><input class="dateSelect" type="date" name="date" value="<?php echo($nowDateInput); ?>" id="date" onchange="changeDate(this)"/><?php
+                }
+                ?>
                 <script>
                     function changeDate(event){
                         document.location="edtHome.php?date=" + event.value;
