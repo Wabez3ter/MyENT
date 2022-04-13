@@ -778,6 +778,9 @@ footer p {
     width: 85%;
   }
 
+  #coursHome main .coursHomeTop h2 {
+    font-size: 30px;
+  }
   #coursHome main #allMainCoursHome .nextCours {
     float: right;
     margin-right: 15%;
