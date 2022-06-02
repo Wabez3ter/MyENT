@@ -5,9 +5,9 @@ include('php/manager.php');
 function connectUserOk($username, $groupe){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     $sql = "SELECT * FROM users WHERE groupeUser='$groupe' AND identifiantUser='$username'";
 
@@ -21,9 +21,10 @@ function connectUserOk($username, $groupe){
 function counterDevoir(){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+
     $groupeUser = $_COOKIE['user_group'];
     $nowDate = date('Y-m-d');
 
@@ -40,9 +41,9 @@ function counterDevoir(){
 function counterExam(){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     $groupeUser = $_COOKIE['user_group'];
     $nowDate = date('Y-m-d');
@@ -60,9 +61,9 @@ function counterExam(){
 function counterNbDevoirHOME(){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     $usergroup = $_COOKIE['user_group'];
     $nowDate = date('Y-m-d');
@@ -80,9 +81,9 @@ function counterNbDevoirHOME(){
 function refreshEDT(){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     $groupeUser = $_COOKIE['user_group'];
     $sqlRemoveTuple = "DELETE FROM edt WHERE groupeEDT='$groupeUser'";
@@ -192,9 +193,9 @@ function refreshEDT(){
 function homeDevoirDiv(){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
@@ -231,9 +232,9 @@ function homeDevoirDiv(){
 function devoirHomeDiv(){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
@@ -286,9 +287,9 @@ function devoirHomeDiv(){
 function afficheEDTDayAndStopMoreNow(){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
@@ -360,9 +361,9 @@ function afficheEDTDayAndStopMoreNow(){
 function afficheEDTHomeNow(){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
@@ -435,9 +436,9 @@ function afficheEDTHomeNow(){
 function afficheEDTHomeNotNow($date){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
@@ -509,9 +510,9 @@ function afficheEDTHomeNotNow($date){
 function addDevoirBD($name, $categorie, $matiere, $date){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     $groupe = $_COOKIE['user_group'];
     //$sql = "INSERT INTO `devoir` (`idDevoir`, `groupeDevoir`, `categorieDevoir`, `nomDevoir`, `matiereDevoir`, `dateDevoir`) VALUES (NULL, 'test', 'test', 'test', 'test', '2022-04-28');"
@@ -524,9 +525,9 @@ function addDevoirBD($name, $categorie, $matiere, $date){
 function editDevoirBD($id, $name, $categorie, $matiere, $date){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     $groupe = $_COOKIE['user_group'];
     //$sql = "INSERT INTO `devoir` (`idDevoir`, `groupeDevoir`, `categorieDevoir`, `nomDevoir`, `matiereDevoir`, `dateDevoir`) VALUES (NULL, 'test', 'test', 'test', 'test', '2022-04-28');"
@@ -539,9 +540,9 @@ function editDevoirBD($id, $name, $categorie, $matiere, $date){
 function deleteDevoirBD($id){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     $groupe = $_COOKIE['user_group'];
     $sql = "DELETE FROM `devoir` WHERE `devoir`.`idDevoir`='$id'";
@@ -553,9 +554,9 @@ function deleteDevoirBD($id){
 function afficheNextCoursOfMatiere($matiere){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
@@ -628,9 +629,9 @@ function afficheNextCoursOfMatiere($matiere){
 function afficheAllDevoirOfMatiere($matiere){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
@@ -683,9 +684,9 @@ function afficheAllDevoirOfMatiere($matiere){
 function afficheAllExamenOfMatiere($matiere){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
-    $con = mysqli_connect("localhost","root","","myent");
+    //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
-    //$con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
