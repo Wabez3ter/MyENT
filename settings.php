@@ -51,10 +51,10 @@ include('BDSystem.php');
                                 <option value="SAE">SAE</option>
                                 <option value="Communication Milieu Professionnel">Communication</option>
                                 <option value="PPP">PPP</option>
-                                <option value="Gestion de projet & des organisations">Gestion de projet & des organisations</option>
+                                <option value="Gestion de projet et des organisations">Gestion de projet & des organisations</option>
                                 <option value="Dev. Apps avec IHM">Dev. Apps avec IHM</option>
                                 <option value="Anglais entreprise">Anglais entreprise</option>
-                                <option value="Réseau & Prog bas niveau">Réseau & Prob bas niveau</option>
+                                <option value="Réseau et Prog bas niveau">Réseau & Prob bas niveau</option>
                                 <option value="Services Réseau">Services Réseau</option>
                                 <?php
                             }
@@ -110,7 +110,7 @@ include('BDSystem.php');
                                     <option value="PPP" <?php if($_GET['matiere'] == "PPP"){
                                         echo("selected");
                                     } ?> >PPP</option>
-                                    <option value="Gestion de projet & des organisations" <?php if($_GET['matiere'] == "Gestion de projet & des organisations"){
+                                    <option value="Gestion de projet et des organisations" <?php if($_GET['matiere'] == "Gestion de projet & des organisations"){
                                         echo("selected");
                                     } ?> >Gestion de projet & des organisations</option>
                                     <option value="Dev. Apps avec IHM" <?php if($_GET['matiere'] == "Dev. Apps avec IHM"){
@@ -119,7 +119,7 @@ include('BDSystem.php');
                                     <option value="Anglais entreprise" <?php if($_GET['matiere'] == "Anglais entreprise"){
                                         echo("selected");
                                     } ?> >Anglais entreprise</option>
-                                    <option value="Réseau & Prog bas niveau" <?php if($_GET['matiere'] == "Réseau & Prog bas niveau"){
+                                    <option value="Réseau et Prog bas niveau" <?php if($_GET['matiere'] == "Réseau & Prog bas niveau"){
                                         echo("selected");
                                     } ?> >Réseau & Prob bas niveau</option>
                                     <option value="Services Réseau" <?php if($_GET['matiere'] == "Services Réseau"){
@@ -153,10 +153,10 @@ include('BDSystem.php');
                                     <option value="SAE">SAE</option>
                                     <option value="Communication Milieu Professionnel">Communication</option>
                                     <option value="PPP">PPP</option>
-                                    <option value="Gestion de projet & des organisations">Gestion de projet & des organisations</option>
+                                    <option value="Gestion de projet et des organisations">Gestion de projet & des organisations</option>
                                     <option value="Dev. Apps avec IHM">Dev. Apps avec IHM</option>
                                     <option value="Anglais entreprise">Anglais entreprise</option>
-                                    <option value="Réseau & Prog bas niveau">Réseau & Prob bas niveau</option>
+                                    <option value="Réseau et Prog bas niveau">Réseau & Prob bas niveau</option>
                                     <option value="Services Réseau">Services Réseau</option>
                                     <?php
                                 }

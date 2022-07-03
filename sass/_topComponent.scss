@@ -89,21 +89,23 @@
     margin-right: 15px;
     vertical-align: center;
 
+    input[type=date]{
+      background-color: $buttonBackColor;
+      color: $txtColorBlack;
+      font-size: 17.5px;
+      padding: 7.5px 0px 7.5px 0px;
+      border: 0px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      height: 20px;
+      box-shadow: 2px 2px 2px #d5d5d5;
+    }
+
     form{
       display: flex;
       flex-direction: row;
 
-      input[type=date]{
-        background-color: $buttonBackColor;
-        color: $txtColorBlack;
-        font-size: 17.5px;
-        padding: 7.5px 0px 7.5px 0px;
-        border: 0px;
-        border-radius: 5px;
-        margin-bottom: 5px;
-        height: 20px;
-        box-shadow: 2px 2px 2px #d5d5d5;
-      }
+
 
       input[type=image]{
         color: $txtColorBlack;

@@ -81,7 +81,7 @@
 
         .edtBD{
           .edtDiv{
-            width: 80%;
+            width: 400px;
           }
         }
       }
@@ -120,6 +120,37 @@
       }
       select{
         width: 85%;
+      }
+    }
+  }
+}
+
+#coursHome{
+  main{
+    .coursHomeTop{
+      h2{
+        font-size: 30px;
+      }
+    }
+
+    #allMainCoursHome{
+
+      .nextCours{
+        float: right;
+        margin-right: 15%;
+        .edtBD{
+          margin-left: 5%;
+          .edtDiv{
+            width: 400px;
+          }
+        }
+      }
+
+      .devoirAll{
+        display: flex;
+        flex-direction: column;
+        margin-left: 5%;
+        width: 25%;
       }
     }
   }

@@ -7,7 +7,11 @@ function connectUserOk($username, $groupe){
     //LOCAL
     //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
+<<<<<<< HEAD
     $con = mysqli_connect("sql103.epizy.com:3306", "epiz_31483841", "4puu6piZoQvxsP", "epiz_31483841_myentdatabase");
+=======
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 
     $sql = "SELECT * FROM users WHERE groupeUser='$groupe' AND identifiantUser='$username'";
 
@@ -23,7 +27,11 @@ function counterDevoir(){
     //LOCAL
     //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
+<<<<<<< HEAD
     $con = mysqli_connect("sql103.epizy.com:3306", "epiz_31483841", "4puu6piZoQvxsP", "epiz_31483841_myentdatabase");
+=======
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 
     $groupeUser = $_COOKIE['user_group'];
     $nowDate = date('Y-m-d');
@@ -43,7 +51,11 @@ function counterExam(){
     //LOCAL
     //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
+<<<<<<< HEAD
     $con = mysqli_connect("sql103.epizy.com:3306", "epiz_31483841", "4puu6piZoQvxsP", "epiz_31483841_myentdatabase");
+=======
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 
     $groupeUser = $_COOKIE['user_group'];
     $nowDate = date('Y-m-d');
@@ -63,7 +75,11 @@ function counterNbDevoirHOME(){
     //LOCAL
     //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
+<<<<<<< HEAD
     $con = mysqli_connect("sql103.epizy.com:3306", "epiz_31483841", "4puu6piZoQvxsP", "epiz_31483841_myentdatabase");
+=======
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 
     $usergroup = $_COOKIE['user_group'];
     $nowDate = date('Y-m-d');
@@ -83,7 +99,11 @@ function refreshEDT(){
     //LOCAL
     //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
+<<<<<<< HEAD
     $con = mysqli_connect("sql103.epizy.com:3306", "epiz_31483841", "4puu6piZoQvxsP", "epiz_31483841_myentdatabase");
+=======
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 
     $groupeUser = $_COOKIE['user_group'];
     $sqlRemoveTuple = "DELETE FROM edt WHERE groupeEDT='$groupeUser'";
@@ -155,6 +175,7 @@ function refreshEDT(){
 
         //SQL
         $nomEDT = $event->getSummary();
+        $nomEDT = str_replace("&", "et", $nomEDT);
 
 
         $descriptionEDT = $event->getDescription();
@@ -194,7 +215,11 @@ function homeDevoirDiv(){
     //LOCAL
     //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
+<<<<<<< HEAD
     $con = mysqli_connect("sql103.epizy.com:3306", "epiz_31483841", "4puu6piZoQvxsP", "epiz_31483841_myentdatabase");
+=======
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
@@ -209,16 +234,16 @@ function homeDevoirDiv(){
         while($row = $result->fetch_assoc()) {
             $colorMatiere = getColorByMatiere($row['matiereDevoir']);
             ?>
-            <div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
-                <h3><?php echo($row['nomDevoir']); ?></h3>
-                <div class="otherDevoirDiv ">
-                    <?php $dateDevoir = date('d/m/Y', strtotime($row['dateDevoir'])); ?>
-                    <p><img src="assets/Utils/clock.png" alt="Icone horloge"/> <?php echo($dateDevoir); ?></p>
-                </div>
-                <div class="otherDevoirDiv">
-                    <p><img id="margeDown" src="assets/Utils/category.png" alt="Icone category"> <?php echo($row['categorieDevoir']); ?></p>
-                </div>
-            </div>
+            <a href="coursHome.php?matiere=<?php echo($row['matiereDevoir']); ?>"><div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
+                    <h3><?php echo($row['nomDevoir']); ?></h3>
+                    <div class="otherDevoirDiv ">
+                        <?php $dateDevoir = date('d/m/Y', strtotime($row['dateDevoir'])); ?>
+                        <p><img src="assets/Utils/clock.png" alt="Icone horloge"/> <?php echo($dateDevoir); ?></p>
+                    </div>
+                    <div class="otherDevoirDiv">
+                        <p><img id="margeDown" src="assets/Utils/category.png" alt="Icone category"> <?php echo($row['categorieDevoir']); ?></p>
+                    </div>
+                </div></a>
             <?php
         }
         mysqli_free_result($result);
@@ -233,7 +258,11 @@ function devoirHomeDiv(){
     //LOCAL
     //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
+<<<<<<< HEAD
     $con = mysqli_connect("sql103.epizy.com:3306", "epiz_31483841", "4puu6piZoQvxsP", "epiz_31483841_myentdatabase");
+=======
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
@@ -288,7 +317,11 @@ function afficheEDTDayAndStopMoreNow(){
     //LOCAL
     //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
+<<<<<<< HEAD
     $con = mysqli_connect("sql103.epizy.com:3306", "epiz_31483841", "4puu6piZoQvxsP", "epiz_31483841_myentdatabase");
+=======
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
@@ -307,47 +340,47 @@ function afficheEDTDayAndStopMoreNow(){
             $duration = $duration/3600;
             $height = $duration*75;
             ?>
-            <div class="edtDiv" style="background-color: <?php echo(getColorByMatiere($row['nomEDT'])); ?>; min-height: <?php echo($height); ?>px;">
-                <div class="topEDTDiv">
-                    <h3><?php echo($row['profEDT']); ?></h3>
-                    <p><img src="assets/Utils/location.png" alt="Icone Salle"/><?php echo($row['salleEDT']); ?></p>
-                </div>
-                <?php
-                $mtop = 0;
-                if($duration == 1){
-                    $mtop = 0;
-                }else if($duration == 1.5){
-                    $mtop = 0;
-                }else if($duration == 2){
-                    $mtop = 58;
-                }else if($duration == 2.5){
-                    $mtop = 85;
-                }else if($duration == 3){
-                    $mtop = 125;
-                }else if($duration == 3.5){
-                    $mtop = 165;
-                }else if($duration == 4){
-                    $mtop = 200;
-                }
-                ?>
-                <div class="content" style="margin-top: <?php echo($mtop); ?>px">
+            <a href="coursHome.php?matiere=<?php echo($row['nomEDT']); ?>"><div class="edtDiv" style="background-color: <?php echo(getColorByMatiere($row['nomEDT'])); ?>; min-height: <?php echo($height); ?>px;">
+                    <div class="topEDTDiv">
+                        <h3><?php echo($row['profEDT']); ?></h3>
+                        <p><img src="assets/Utils/location.png" alt="Icone Salle"/><?php echo($row['salleEDT']); ?></p>
+                    </div>
                     <?php
-                    $nom = $row['nomEDT'];
-                    if($nom == "Communication Milieu Professionnel"){
-                        $nom = "Communication";
+                    $mtop = 0;
+                    if($duration == 1){
+                        $mtop = 0;
+                    }else if($duration == 1.5){
+                        $mtop = 0;
+                    }else if($duration == 2){
+                        $mtop = 58;
+                    }else if($duration == 2.5){
+                        $mtop = 85;
+                    }else if($duration == 3){
+                        $mtop = 125;
+                    }else if($duration == 3.5){
+                        $mtop = 165;
+                    }else if($duration == 4){
+                        $mtop = 200;
                     }
                     ?>
-                    <h2><?php echo($nom); ?></h2>
-                    <?php
-                    $heureDebut = $row['heureStart'];
-                    //00:00:00
-                    $heureDebut = substr($heureDebut, 0, 5);
-                    $heureFin = $row['heureStop'];
-                    $heureFin = substr($heureFin, 0, 5);
-                    ?>
-                    <p class="hours"><?php echo($heureDebut); ?> - <?php echo($heureFin); ?></p>
-                </div>
-            </div>
+                    <div class="content" style="margin-top: <?php echo($mtop); ?>px">
+                        <?php
+                        $nom = $row['nomEDT'];
+                        if($nom == "Communication Milieu Professionnel"){
+                            $nom = "Communication";
+                        }
+                        ?>
+                        <h2><?php echo($nom); ?></h2>
+                        <?php
+                        $heureDebut = $row['heureStart'];
+                        //00:00:00
+                        $heureDebut = substr($heureDebut, 0, 5);
+                        $heureFin = $row['heureStop'];
+                        $heureFin = substr($heureFin, 0, 5);
+                        ?>
+                        <p class="hours"><?php echo($heureDebut); ?> - <?php echo($heureFin); ?></p>
+                    </div>
+                </div></a>
             <?php
         }
         mysqli_free_result($result);
@@ -362,7 +395,11 @@ function afficheEDTHomeNow(){
     //LOCAL
     //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
+<<<<<<< HEAD
     $con = mysqli_connect("sql103.epizy.com:3306", "epiz_31483841", "4puu6piZoQvxsP", "epiz_31483841_myentdatabase");
+=======
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
@@ -380,47 +417,49 @@ function afficheEDTHomeNow(){
             $duration = $duration/3600;
             $height = $duration*75;
             ?>
-            <div class="edtDiv" style="background-color: <?php echo(getColorByMatiere($row['nomEDT'])); ?>; min-height: <?php echo($height); ?>px;">
-                <div class="topEDTDiv">
-                    <h3><?php echo($row['profEDT']); ?></h3>
-                    <p><img src="assets/Utils/location.png" alt="Icone Salle"/><?php echo($row['salleEDT']); ?></p>
-                </div>
-                <?php
-                $mtop = 0;
-                if($duration == 1){
-                    $mtop = 0;
-                }else if($duration == 1.5){
-                    $mtop = 0;
-                }else if($duration == 2){
-                    $mtop = 58;
-                }else if($duration == 2.5){
-                    $mtop = 85;
-                }else if($duration == 3){
-                    $mtop = 125;
-                }else if($duration == 3.5){
-                    $mtop = 165;
-                }else if($duration == 4){
-                    $mtop = 200;
-                }
-                ?>
-                <div class="content" style="margin-top: <?php echo($mtop); ?>px">
+            <a href="coursHome.php?matiere=<?php echo($row['nomEDT']); ?>">
+                <div class="edtDiv" style="background-color: <?php echo(getColorByMatiere($row['nomEDT'])); ?>; min-height: <?php echo($height); ?>px;">
+                    <div class="topEDTDiv">
+                        <h3><?php echo($row['profEDT']); ?></h3>
+                        <p><img src="assets/Utils/location.png" alt="Icone Salle"/><?php echo($row['salleEDT']); ?></p>
+                    </div>
                     <?php
-                    $nom = $row['nomEDT'];
-                    if($nom == "Communication Milieu Professionnel"){
-                        $nom = "Communication";
+                    $mtop = 0;
+                    if($duration == 1){
+                        $mtop = 0;
+                    }else if($duration == 1.5){
+                        $mtop = 0;
+                    }else if($duration == 2){
+                        $mtop = 58;
+                    }else if($duration == 2.5){
+                        $mtop = 85;
+                    }else if($duration == 3){
+                        $mtop = 125;
+                    }else if($duration == 3.5){
+                        $mtop = 165;
+                    }else if($duration == 4){
+                        $mtop = 200;
                     }
                     ?>
-                    <h2><?php echo($nom); ?></h2>
-                    <?php
-                    $heureDebut = $row['heureStart'];
-                    //00:00:00
-                    $heureDebut = substr($heureDebut, 0, 5);
-                    $heureFin = $row['heureStop'];
-                    $heureFin = substr($heureFin, 0, 5);
-                    ?>
-                    <p class="hours"><?php echo($heureDebut); ?> - <?php echo($heureFin); ?></p>
+                    <div class="content" style="margin-top: <?php echo($mtop); ?>px">
+                        <?php
+                        $nom = $row['nomEDT'];
+                        if($nom == "Communication Milieu Professionnel"){
+                            $nom = "Communication";
+                        }
+                        ?>
+                        <h2><?php echo($nom); ?></h2>
+                        <?php
+                        $heureDebut = $row['heureStart'];
+                        //00:00:00
+                        $heureDebut = substr($heureDebut, 0, 5);
+                        $heureFin = $row['heureStop'];
+                        $heureFin = substr($heureFin, 0, 5);
+                        ?>
+                        <p class="hours"><?php echo($heureDebut); ?> - <?php echo($heureFin); ?></p>
+                    </div>
                 </div>
-            </div>
+            </a>
             <?php
         }
         mysqli_free_result($result);
@@ -435,7 +474,11 @@ function afficheEDTHomeNotNow($date){
     //LOCAL
     //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
+<<<<<<< HEAD
     $con = mysqli_connect("sql103.epizy.com:3306", "epiz_31483841", "4puu6piZoQvxsP", "epiz_31483841_myentdatabase");
+=======
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 
     if($con->connect_error){
         echo("Erreur, impossible de se connecter à la base de donnée");
@@ -454,6 +497,124 @@ function afficheEDTHomeNotNow($date){
             $duration = $duration/3600;
             $height = $duration*75;
             ?>
+            <a href="coursHome.php?matiere=<?php echo($row['nomEDT']); ?>"><div class="edtDiv" style="background-color: <?php echo(getColorByMatiere($row['nomEDT'])); ?>; min-height: <?php echo($height); ?>px;">
+                    <div class="topEDTDiv">
+                        <h3><?php echo($row['profEDT']); ?></h3>
+                        <p><img src="assets/Utils/location.png" alt="Icone Salle"/><?php echo($row['salleEDT']); ?></p>
+                    </div>
+                    <?php
+                    $mtop = 0;
+                    if($duration == 1){
+                        $mtop = 0;
+                    }else if($duration == 1.5){
+                        $mtop = 0;
+                    }else if($duration == 2){
+                        $mtop = 58;
+                    }else if($duration == 2.5){
+                        $mtop = 85;
+                    }else if($duration == 3){
+                        $mtop = 125;
+                    }else if($duration == 3.5){
+                        $mtop = 165;
+                    }else if($duration == 4){
+                        $mtop = 200;
+                    }
+                    ?>
+                    <div class="content" style="margin-top: <?php echo($mtop); ?>px">
+                        <?php
+                        $nom = $row['nomEDT'];
+                        if($nom == "Communication Milieu Professionnel"){
+                            $nom = "Communication";
+                        }
+                        ?>
+                        <h2><?php echo($nom); ?></h2>
+                        <?php
+                        $heureDebut = $row['heureStart'];
+                        //00:00:00
+                        $heureDebut = substr($heureDebut, 0, 5);
+                        $heureFin = $row['heureStop'];
+                        $heureFin = substr($heureFin, 0, 5);
+                        ?>
+                        <p class="hours"><?php echo($heureDebut); ?> - <?php echo($heureFin); ?></p>
+                    </div>
+                </div></a>
+            <?php
+        }
+        mysqli_free_result($result);
+    } else {
+        printf('Aucun cour trouvé.<br />');
+    }
+    $con->close();
+}
+
+function addDevoirBD($name, $categorie, $matiere, $date){
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    //LOCAL
+    //$con = mysqli_connect("localhost","root","","myent");
+    //SERVER
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+
+    $groupe = $_COOKIE['user_group'];
+    //$sql = "INSERT INTO `devoir` (`idDevoir`, `groupeDevoir`, `categorieDevoir`, `nomDevoir`, `matiereDevoir`, `dateDevoir`) VALUES (NULL, 'test', 'test', 'test', 'test', '2022-04-28');"
+    $sql = "INSERT INTO `devoir` (`idDevoir`, `groupeDevoir`, `categorieDevoir`, `nomDevoir`, `matiereDevoir`, `dateDevoir`) VALUES(NULL, '$groupe', '$categorie', '$name', '$matiere', '$date')";
+
+    mysqli_query($con, $sql);
+    mysqli_close($con);
+}
+
+function editDevoirBD($id, $name, $categorie, $matiere, $date){
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    //LOCAL
+    //$con = mysqli_connect("localhost","root","","myent");
+    //SERVER
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+
+    $groupe = $_COOKIE['user_group'];
+    //$sql = "INSERT INTO `devoir` (`idDevoir`, `groupeDevoir`, `categorieDevoir`, `nomDevoir`, `matiereDevoir`, `dateDevoir`) VALUES (NULL, 'test', 'test', 'test', 'test', '2022-04-28');"
+    $sql = "UPDATE `devoir` SET `categorieDevoir`='$categorie',`nomDevoir`='$name',`matiereDevoir`='$matiere',`dateDevoir`='$date' WHERE `devoir`.`idDevoir`='$id'";
+
+    mysqli_query($con, $sql);
+    mysqli_close($con);
+}
+
+function deleteDevoirBD($id){
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    //LOCAL
+    //$con = mysqli_connect("localhost","root","","myent");
+    //SERVER
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+
+    $groupe = $_COOKIE['user_group'];
+    $sql = "DELETE FROM `devoir` WHERE `devoir`.`idDevoir`='$id'";
+
+    mysqli_query($con, $sql);
+    mysqli_close($con);
+}
+
+function afficheNextCoursOfMatiere($matiere){
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+    //LOCAL
+    //$con = mysqli_connect("localhost","root","","myent");
+    //SERVER
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+
+    if($con->connect_error){
+        echo("Erreur, impossible de se connecter à la base de donnée");
+    }
+
+    $usergroup = $_COOKIE['user_group'];
+    $nowDate = date('Y-m-d');
+    $nowHeure = date('H:m:s');
+    //print($nowDate);
+    $sql = "SELECT * FROM edt WHERE groupeEDT='$usergroup' AND dateEDT>='$nowDate' AND nomEDT='$matiere' ORDER BY heureStart ASC LIMIT 1";
+    $result = $con->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $duration = $row['durationEDT'];
+            $duration = $duration/3600;
+            $height = $duration*75;
+            ?>
             <div class="edtDiv" style="background-color: <?php echo(getColorByMatiere($row['nomEDT'])); ?>; min-height: <?php echo($height); ?>px;">
                 <div class="topEDTDiv">
                     <h3><?php echo($row['profEDT']); ?></h3>
@@ -491,8 +652,9 @@ function afficheEDTHomeNotNow($date){
                     $heureDebut = substr($heureDebut, 0, 5);
                     $heureFin = $row['heureStop'];
                     $heureFin = substr($heureFin, 0, 5);
+                    $dateCours = $row['dateEDT'];
                     ?>
-                    <p class="hours"><?php echo($heureDebut); ?> - <?php echo($heureFin); ?></p>
+                    <p class="hours"><?php echo($heureDebut); ?> - <?php echo($heureFin); ?> | <?php echo($dateCours); ?></p>
                 </div>
             </div>
             <?php
@@ -504,32 +666,81 @@ function afficheEDTHomeNotNow($date){
     $con->close();
 }
 
-function addDevoirBD($name, $categorie, $matiere, $date){
+function afficheAllDevoirOfMatiere($matiere){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
     //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
+<<<<<<< HEAD
     $con = mysqli_connect("sql103.epizy.com:3306", "epiz_31483841", "4puu6piZoQvxsP", "epiz_31483841_myentdatabase");
+=======
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 
-    $groupe = $_COOKIE['user_group'];
-    //$sql = "INSERT INTO `devoir` (`idDevoir`, `groupeDevoir`, `categorieDevoir`, `nomDevoir`, `matiereDevoir`, `dateDevoir`) VALUES (NULL, 'test', 'test', 'test', 'test', '2022-04-28');"
-    $sql = "INSERT INTO `devoir` (`idDevoir`, `groupeDevoir`, `categorieDevoir`, `nomDevoir`, `matiereDevoir`, `dateDevoir`) VALUES(NULL, '$groupe', '$categorie', '$name', '$matiere', '$date')";
+    if($con->connect_error){
+        echo("Erreur, impossible de se connecter à la base de donnée");
+    }
 
-    mysqli_query($con, $sql);
-    mysqli_close($con);
+    $usergroup = $_COOKIE['user_group'];
+    $nowDate = date('Y-m-d');
+
+    $sql = "SELECT * FROM devoir WHERE groupeDevoir='$usergroup' AND dateDevoir>='$nowDate' AND matiereDevoir='$matiere' AND categorieDevoir='Devoir' ORDER BY dateDevoir ASC";
+    $result = $con->query($sql);
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $colorMatiere = getColorByMatiere($row['matiereDevoir']);
+
+            if(isset($_COOKIE['username'])){
+                ?>
+                <a href="settings.php?view=devoirEditSupp&id=<?php echo($row['idDevoir']); ?>&name=<?php echo($row['nomDevoir']) ?>&categorie=<?php echo($row['categorieDevoir']) ?>&matiere=<?php echo($row['matiereDevoir']) ?>&date=<?php echo($row['dateDevoir']) ?>"><div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
+                        <h3><?php echo($row['nomDevoir']); ?></h3>
+                        <div class="otherDevoirDiv ">
+                            <?php $dateDevoir = date('d/m/Y', strtotime($row['dateDevoir'])); ?>
+                            <p><img src="assets/Utils/clock.png" alt="Icone horloge"/> <?php echo($dateDevoir); ?></p>
+                        </div>
+                        <div class="otherDevoirDiv">
+                            <p><img id="margeDown" src="assets/Utils/category.png" alt="Icone category"> <?php echo($row['categorieDevoir']); ?></p>
+                        </div>
+                    </div></a>
+                <?php
+            }else {
+                ?>
+                <div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
+                    <h3><?php echo($row['nomDevoir']); ?></h3>
+                    <div class="otherDevoirDiv ">
+                        <?php $dateDevoir = date('d/m/Y', strtotime($row['dateDevoir'])); ?>
+                        <p><img src="assets/Utils/clock.png" alt="Icone horloge"/> <?php echo($dateDevoir); ?></p>
+                    </div>
+                    <div class="otherDevoirDiv">
+                        <p><img id="margeDown" src="assets/Utils/category.png" alt="Icone category"> <?php echo($row['categorieDevoir']); ?></p>
+                    </div>
+                </div>
+                <?php
+            }
+        }
+        mysqli_free_result($result);
+    } else {
+        printf('Aucun devoir trouvé.<br />');
+    }
+    $con->close();
 }
 
-function editDevoirBD($id, $name, $categorie, $matiere, $date){
+function afficheAllExamenOfMatiere($matiere){
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     //LOCAL
     //$con = mysqli_connect("localhost","root","","myent");
     //SERVER
+<<<<<<< HEAD
     $con = mysqli_connect("sql103.epizy.com:3306", "epiz_31483841", "4puu6piZoQvxsP", "epiz_31483841_myentdatabase");
+=======
+    $con = mysqli_connect("sql301.epizy.com:3306", "epiz_30680603", "sJiMmkSz1BgA", "epiz_30680603_myent");
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 
-    $groupe = $_COOKIE['user_group'];
-    //$sql = "INSERT INTO `devoir` (`idDevoir`, `groupeDevoir`, `categorieDevoir`, `nomDevoir`, `matiereDevoir`, `dateDevoir`) VALUES (NULL, 'test', 'test', 'test', 'test', '2022-04-28');"
-    $sql = "UPDATE `devoir` SET `categorieDevoir`='$categorie',`nomDevoir`='$name',`matiereDevoir`='$matiere',`dateDevoir`='$date' WHERE `devoir`.`idDevoir`='$id'";
+    if($con->connect_error){
+        echo("Erreur, impossible de se connecter à la base de donnée");
+    }
 
+<<<<<<< HEAD
     mysqli_query($con, $sql);
     mysqli_close($con);
 }
@@ -546,6 +757,50 @@ function deleteDevoirBD($id){
 
     mysqli_query($con, $sql);
     mysqli_close($con);
+=======
+    $usergroup = $_COOKIE['user_group'];
+    $nowDate = date('Y-m-d');
+
+    $sql = "SELECT * FROM devoir WHERE groupeDevoir='$usergroup' AND dateDevoir>='$nowDate' AND matiereDevoir='$matiere' AND categorieDevoir='Examen' ORDER BY dateDevoir ASC";
+    $result = $con->query($sql);
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $colorMatiere = getColorByMatiere($row['matiereDevoir']);
+
+            if(isset($_COOKIE['username'])){
+                ?>
+                <a href="settings.php?view=devoirEditSupp&id=<?php echo($row['idDevoir']); ?>&name=<?php echo($row['nomDevoir']) ?>&categorie=<?php echo($row['categorieDevoir']) ?>&matiere=<?php echo($row['matiereDevoir']) ?>&date=<?php echo($row['dateDevoir']) ?>"><div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
+                        <h3><?php echo($row['nomDevoir']); ?></h3>
+                        <div class="otherDevoirDiv ">
+                            <?php $dateDevoir = date('d/m/Y', strtotime($row['dateDevoir'])); ?>
+                            <p><img src="assets/Utils/clock.png" alt="Icone horloge"/> <?php echo($dateDevoir); ?></p>
+                        </div>
+                        <div class="otherDevoirDiv">
+                            <p><img id="margeDown" src="assets/Utils/category.png" alt="Icone category"> <?php echo($row['categorieDevoir']); ?></p>
+                        </div>
+                    </div></a>
+                <?php
+            }else {
+                ?>
+                <div class="devoirDiv" style="border-left: 5px solid <?php echo($colorMatiere) ?>;">
+                    <h3><?php echo($row['nomDevoir']); ?></h3>
+                    <div class="otherDevoirDiv ">
+                        <?php $dateDevoir = date('d/m/Y', strtotime($row['dateDevoir'])); ?>
+                        <p><img src="assets/Utils/clock.png" alt="Icone horloge"/> <?php echo($dateDevoir); ?></p>
+                    </div>
+                    <div class="otherDevoirDiv">
+                        <p><img id="margeDown" src="assets/Utils/category.png" alt="Icone category"> <?php echo($row['categorieDevoir']); ?></p>
+                    </div>
+                </div>
+                <?php
+            }
+        }
+        mysqli_free_result($result);
+    } else {
+        printf('Aucun devoir trouvé.<br />');
+    }
+    $con->close();
+>>>>>>> 871323c0891babf9c54e7e3e0d3dc304668b1bd0
 }
 
 function fileDevoirByGroupe(){
