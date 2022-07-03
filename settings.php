@@ -175,6 +175,10 @@ include('BDSystem.php');
                     $name = $_POST['name'];
 
                     addDevoirBD($name, $categorie, $matiere, $date);
+                    $array = fileDevoirByGroupe();
+                    var_dump($array);
+                    $json = json_encode($array);
+                    $bytes = file_put_contents("devoir.json", $json);
                     header("Location: home.php");
                 }else if($_GET['view'] == "BDdevoirEdit" AND isset($_POST['id']) AND isset($_POST['date']) AND isset($_POST['matiere']) AND isset($_POST['categorie']) AND isset($_POST['name'])){
                     //BD Add Devoir

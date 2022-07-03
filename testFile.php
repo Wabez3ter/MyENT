@@ -11,7 +11,11 @@
         <?php
         include('BDSystem.php');
 
-        refreshEDT();
+        $array = fileDevoirByGroupe();
+        var_dump($array);
+        $json = json_encode($array);
+        $bytes = file_put_contents("devoir.json", $json);
+        echo($bytes);
         ?>
     </body>
 </html>
